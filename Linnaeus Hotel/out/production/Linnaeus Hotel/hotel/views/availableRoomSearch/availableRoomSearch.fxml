@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<GridPane id="mainGrid" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="10.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints minHeight="-Infinity" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="-Infinity" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="-Infinity" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="-Infinity" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="-Infinity" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="-Infinity" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="-Infinity" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <JFXDatePicker id="datePicker" fx:id="datePicker" promptText="Choose a Date" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <JFXComboBox id="qualityLevelCmbBox" fx:id="qualityLevelCmbBox" promptText="Select Quality Level" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <JFXComboBox id="bedCountCmbBox" fx:id="bedCountCmbBox" layoutX="163.0" layoutY="140.0" promptText="Select Bed Count" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <JFXCheckBox id="smokingChckBox" fx:id="smokingChckBox" layoutX="310.0" layoutY="266.0" text="Smoking" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <JFXCheckBox id="adjoiningChckBox" fx:id="adjoiningChckBox" layoutX="10.0" layoutY="38.0" text="Adjoining" GridPane.columnIndex="6" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6cb737" height="18.0" stroke="BLACK" strokeType="INSIDE" width="18.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <JFXCheckBox id="cleanChckBox" fx:id="cleanChckBox" text="Clean" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e93402" height="18.0" layoutX="210.0" layoutY="116.0" stroke="BLACK" strokeType="INSIDE" width="18.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <JFXCheckBox id="dirtyChckBox" fx:id="dirtyChckBox" layoutX="310.0" layoutY="112.0" text="Dirty" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f3ff1f" height="18.0" layoutX="10.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="18.0" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <JFXCheckBox id="inspectedChckBox" fx:id="inspectedChckBox" layoutX="10.0" layoutY="38.0" text="Inspected" GridPane.columnIndex="6" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="18.0" layoutX="10.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="18.0" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <JFXCheckBox id="outOfOrderChckBox" fx:id="outOfOrderChckBox" layoutX="10.0" layoutY="38.0" text="Out of Order" GridPane.columnIndex="6" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <JFXButton id="searchBtn" fx:id="searchBtn" text="Search" GridPane.columnIndex="7" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <VBox id="bottomRightBtnVBox" alignment="BOTTOM_RIGHT" GridPane.columnIndex="7" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         <children>
+            <JFXButton id="roomPlanBtn" fx:id="roomPlanBtn" text="Room Plan" />
+            <JFXButton id="reserveBtn" fx:id="reserveBtn" alignment="CENTER_RIGHT" contentDisplay="CENTER" text="Reserve" />
+         </children>
+      </VBox>
+      <TableView id="availableRoomsTableView" fx:id="availableRoomsTableView" GridPane.columnIndex="1" GridPane.columnSpan="6" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.rowSpan="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+        <columns>
+          <TableColumn id="roomcolumn" fx:id="roomcolumn" maxWidth="-1.0" minWidth="75.0" prefWidth="-1.0" text="Room" />
+          <TableColumn id="qualitycolumn" fx:id="qualitycolumn" maxWidth="-1.0" minWidth="75.0" prefWidth="-1.0" text="Quality" />
+            <TableColumn id="bedscolumn" fx:id="bedscolumn" maxWidth="-1.0" minWidth="75.0" prefWidth="-1.0" text="Beds" />
+            <TableColumn id="smokingcolumn" fx:id="smokingcolumn" maxWidth="-1.0" minWidth="75.0" prefWidth="-1.0" text="Smoking" />
+            <TableColumn id="adjoiningcolumn" fx:id="adjoiningcolumn" maxWidth="-1.0" minWidth="125.0" prefWidth="-1.0" text="Adjoining Room" />
+            <TableColumn id="statuscolumn" fx:id="statuscolumn" maxWidth="-1.0" minWidth="75.0" prefWidth="-1.0" text="Status" />
+            <TableColumn id="priceRatecolumn" fx:id="priceRatecolumn" maxWidth="-1.0" minWidth="105.0" prefWidth="-1.0" text="Price Rate" />
+        </columns>
+      </TableView>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</GridPane>

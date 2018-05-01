@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane id="mainGridPane" alignment="CENTER" hgap="5.0" style="-fx-background-color: #f0f0f0;" vgap="5.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.views.main.MainController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="ALWAYS" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.0" minWidth="1.0" prefWidth="1.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="58.6666259765625" prefWidth="144.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="51.0" minWidth="16.3333740234375" prefWidth="51.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="139.0" minWidth="139.0" prefWidth="139.0" />
+      <ColumnConstraints hgrow="SOMETIMES" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints vgrow="ALWAYS" />
+      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints minHeight="1.0" prefHeight="1.0" vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints minHeight="100.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="-Infinity" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="185.77777099609375" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="2.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="2.0" minHeight="2.0" prefHeight="2.0" vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <JFXComboBox id="locationComboBox" fx:id="locationComboBox" promptText="Select Your Location" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="RIGHT" />
+      <VBox alignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         <children>
+            <ImageView id="headerImageView" fitWidth="900.0" nodeOrientation="INHERIT" pickOnBounds="true" VBox.vgrow="ALWAYS">
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+               <image>
+                  <Image url="@../../../resources/images/mainLogo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" spacing="100.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         <children>
+            <JFXButton id="guestAccountBtn" alignment="CENTER" contentDisplay="TOP" onAction="#onGuestAccountBtnClick" text="Guest Account" textFill="#b8b9be">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/images/guestAccount.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton id="reservationsBtn" alignment="CENTER" contentDisplay="TOP" onAction="#onReservationsBtnClick" text="Reservations" textFill="#b8b9be">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/images/reservations.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton id="avalableRoomsBtn" alignment="CENTER" contentDisplay="TOP" onAction="#onAvailableRoomsBtnClick" text="Available Rooms" textFill="#b8b9be">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/images/availableRooms.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton id="helpButton" alignment="CENTER" contentDisplay="TOP" onAction="#onHelpBtnClick" text="Help" textFill="#b8b9be">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/images/help.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </HBox>
+      <GridPane id="overallRoomStatusGridPane" hgap="5.0" vgap="5.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.rowSpan="10" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 209" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 208" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 207" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 206" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 205" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 204" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 203" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 202" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 201" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 200" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 109" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 108" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 107" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 106" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 105" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 104" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 103" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 102" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 101" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 100" />
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+      <GridPane hgap="5.0" vgap="5.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.rowSpan="7" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.0" minWidth="1.0" prefWidth="1.0" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Rooms: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="Total: " GridPane.rowIndex="1" />
+            <Label id="totalRoomsLbl" fx:id="totalRoomsLbl" text="20" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Occupied: " GridPane.rowIndex="2" />
+            <Label id="occupiedRoomsLbl" fx:id="occupiedRoomsLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Available: " GridPane.rowIndex="3" />
+            <Label id="availableRoomsLbl" fx:id="availableRoomsLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Guests: " GridPane.columnIndex="3">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="Total: " GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label id="totalGuestsLbl" fx:id="totalGuestsLbl" text="0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label text="Male: " GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label id="maleGuestsLbl" fx:id="maleGuestsLbl" text="0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Label text="Female: " GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Label id="femaleGuestsLbl" fx:id="femaleGuestsLbl" text="0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Label text="Available: " GridPane.rowIndex="4">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="Double Deluxe: " GridPane.rowIndex="5" />
+            <Label id="availableDoubleDeluxeLbl" fx:id="availableDoubleDeluxeLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Single Deluxe: " GridPane.rowIndex="6" />
+            <Label id="availableSignleDeluxeLbl" fx:id="availableSignleDeluxeLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="Twin Bed: " GridPane.rowIndex="7" />
+            <Label id="availableTwinBedLbl" fx:id="availableTwinBedLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label text="Double: " GridPane.rowIndex="8" />
+            <Label id="availableDoubleLbl" fx:id="availableDoubleLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label text="Single: " GridPane.rowIndex="9" />
+            <Label id="availableSingleLbl" fx:id="availableSingleLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label text="Checking In/Out: " GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="Checking In Today: " GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <Label id="checkingInTodayLbl" fx:id="checkingInTodayLbl" text="0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <Label text="Checking Out Today: " GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <Label id="checkingOutTodayLbl" fx:id="checkingOutTodayLbl" text="0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="2" GridPane.rowSpan="10" />
+         </children>
+      </GridPane>
+      <GridPane GridPane.columnIndex="2" GridPane.columnSpan="4" GridPane.rowIndex="10" GridPane.rowSpan="4">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Legend: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B#8A9A5B;" GridPane.rowIndex="1">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Available" textAlignment="CENTER" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #CD5C5C;" GridPane.rowIndex="2">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Occupied" textAlignment="CENTER" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #FADA5E;" GridPane.rowIndex="3">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Cleaning" textAlignment="CENTER" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #7851A9;" GridPane.rowIndex="4">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Check Out" textAlignment="CENTER" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #007791;" GridPane.rowIndex="5">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Maintenance" textAlignment="CENTER" />
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+      <Label layoutX="631.0" layoutY="569.0" text="Copyright @ T34MN3RD 2018" GridPane.columnSpan="5" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="16" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <Separator prefWidth="200.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="5" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="9" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <Separator prefWidth="200.0" GridPane.columnSpan="7" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="15" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="13" />
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+   </padding>
+</GridPane>
