@@ -46,7 +46,7 @@
       <RowConstraints vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <JFXComboBox id="locationComboBox" fx:id="locationComboBox" promptText="Select Your Location" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="RIGHT" />
+      <JFXComboBox id="locationComboBox" fx:id="locationComboBox" onAction="#onLocationComboBoxChanged" promptText="Select Your Location" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="RIGHT" />
       <VBox alignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
          <children>
             <ImageView id="headerImageView" fitWidth="900.0" nodeOrientation="INHERIT" pickOnBounds="true" VBox.vgrow="ALWAYS">

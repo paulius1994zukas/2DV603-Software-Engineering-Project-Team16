@@ -2,6 +2,7 @@ package hotel.views.availableRoomSearch;
 
 import java.net.URL;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
@@ -9,6 +10,9 @@ import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import hotel.database.DbConnect;
+import hotel.models.Reservation;
+import hotel.models.Room;
+import hotel.views.main.MainController;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,10 +21,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class AvailableRoomSearchController implements Initializable {
 
-    ObservableList<Member> list = FXCollections.observableArrayList();
+    ObservableList<Room> roomsList = FXCollections.observableArrayList();
 
     @FXML
     private JFXDatePicker datePicker;
@@ -47,33 +52,59 @@ public class AvailableRoomSearchController implements Initializable {
     @FXML
     private JFXButton reserveBtn;
     @FXML
-    private TableView<Member> availableRoomsTableView;
+    private TableView<Room> availableRoomsTableView;
     @FXML
-    private TableColumn<Member, String> roomcolumn;
+    private TableColumn<Room, String> roomcolumn;
     @FXML
-    private TableColumn<Member, String> qualitycolumn;
+    private TableColumn<Room, String> qualitycolumn;
     @FXML
-    private TableColumn<Member, String> bedscolumn;
+    private TableColumn<Room, String> bedscolumn;
     @FXML
-    private TableColumn<Member, String> smokingcolumn;
+    private TableColumn<Room, String> smokingcolumn;
     @FXML
-    private TableColumn<Member, String> adjoiningcolumn;
+    private TableColumn<Room, String> adjoiningcolumn;
     @FXML
-    private TableColumn<Member, String> statuscolumn;
+    private TableColumn<Room, String> statuscolumn;
     @FXML
-    private TableColumn<Member, String> priceRatecolumn;
+    private TableColumn<Room, String> priceRatecolumn;
+
+    private String location;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         initCol();
+        location = Room.getLocation();
+        System.out.println(location);
         loadData();
+        setQualityLevels();
+        setBedCount();
+    }
+
+    private void setQualityLevels(){
+        ObservableList qualityLevels = FXCollections.observableArrayList();
+        qualityLevels.add("1");
+        qualityLevels.add("2");
+        qualityLevels.add("3");
+        qualityLevels.add("4");
+        qualityLevels.add("5");
+        qualityLevelCmbBox.setItems(qualityLevels);
+    }
+
+    private void setBedCount(){
+        ObservableList bedCounts = FXCollections.observableArrayList();
+        bedCounts.add("1");
+        bedCounts.add("2");
+        bedCountCmbBox.setItems(bedCounts);
     }
 
     private void initCol() {
-//        nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-//        idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
-//        mobileCol.setCellValueFactory(new PropertyValueFactory<>("mobile"));
-//        emailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
+        roomcolumn.setCellValueFactory(new PropertyValueFactory<>("roomID"));
+        qualitycolumn.setCellValueFactory(new PropertyValueFactory<>("quality"));
+        bedscolumn.setCellValueFactory(new PropertyValueFactory<>("bedNumber"));
+        smokingcolumn.setCellValueFactory(new PropertyValueFactory<>("smoking"));
+        adjoiningcolumn.setCellValueFactory(new PropertyValueFactory<>("adjoining"));
+        statuscolumn.setCellValueFactory(new PropertyValueFactory<>("status"));
+        priceRatecolumn.setCellValueFactory(new PropertyValueFactory<>("maxRate"));
     }
 
 //    private Stage getStage() {
@@ -81,26 +112,25 @@ public class AvailableRoomSearchController implements Initializable {
 //    }
 
     private void loadData() {
-//        list.clear();
-//
-//        DatabaseHandler handler = DatabaseHandler.getInstance();
-//        String qu = "SELECT * FROM MEMBER";
-//        ResultSet rs = handler.execQuery(qu);
-//        try {
-//            while (rs.next()) {
-//                String name = rs.getString("name");
-//                String mobile = rs.getString("mobile");
-//                String id = rs.getString("id");
-//                String email = rs.getString("email");
-//
-//                list.add(new Member(name, id, mobile, email));
-//
-//            }
-//        } catch (SQLException ex) {
-//            Logger.getLogger(addReservationController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//
-////        tableView.setItems(list);
+        roomsList.clear();
+        DbConnect connection = new DbConnect();
+        ArrayList parameters = new ArrayList();
+        parameters.add(location);
+        try {
+            String query = "SELECT * FROM ROOMS WHERE LOCATION=?";
+            ResultSet rs = connection.executeWithParameters(query, parameters);
+            while (rs.next()) {
+                roomsList.add(new Room(rs.getString("ID"), rs.getInt("QUALITY"),
+                        rs.getInt("BEDNUMBER"), rs.getString("SMOKING"),
+                        rs.getString("ADJOINING"), rs.getString("STATUS"),
+                        rs.getInt("MAXRATE")));
+            }
+            availableRoomsTableView.setItems(roomsList);
+        } catch (Exception ex) {
+            System.err.println(ex);
+        } finally {
+            connection.closeConnection();
+        }
     }
 
     @FXML

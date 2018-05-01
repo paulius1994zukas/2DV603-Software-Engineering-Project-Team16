@@ -99,7 +99,7 @@ public class GuestAccountController implements Initializable {
     }
 
     private void initCol() {
-        idcolumn.setCellValueFactory(new PropertyValueFactory<>("reservationId"));
+        idcolumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         firstNamecolumn.setCellValueFactory(new PropertyValueFactory<>("firstName"));
         lastNamecolumn.setCellValueFactory(new PropertyValueFactory<>("lastName"));
         addresscolumn.setCellValueFactory(new PropertyValueFactory<>("address"));
@@ -217,6 +217,7 @@ public class GuestAccountController implements Initializable {
 
     private void getGuestDetails() {
         guestAccountsList.clear();
+        clearSearchFields();
         DbConnect connection = new DbConnect();
         ArrayList parameters = new ArrayList();
         parameters.add(passportNumberTextField.getText());
@@ -307,5 +308,13 @@ public class GuestAccountController implements Initializable {
         createPhoneNumberTxtField.clear();
         createCreditCardNumberTxtField.clear();
         createPassportNumberTxtField.clear();
+    }
+
+    private void getCheckingInTodayCount(){
+
+    }
+
+    private void getCheckingOutTodayCount(){
+
     }
 }

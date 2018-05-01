@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<GridPane id="mainGrid" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane id="mainGrid" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.views.availableRoomSearch.AvailableRoomSearchController">
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
@@ -56,13 +56,13 @@
       </VBox>
       <TableView id="availableRoomsTableView" fx:id="availableRoomsTableView" GridPane.columnIndex="1" GridPane.columnSpan="6" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.rowSpan="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
         <columns>
-          <TableColumn id="roomcolumn" fx:id="roomcolumn" maxWidth="-1.0" minWidth="75.0" prefWidth="-1.0" text="Room" />
+          <TableColumn id="roomcolumn" fx:id="roomcolumn" maxWidth="-1.0" minWidth="85.0" prefWidth="-1.0" text="Room" />
           <TableColumn id="qualitycolumn" fx:id="qualitycolumn" maxWidth="-1.0" minWidth="75.0" prefWidth="-1.0" text="Quality" />
             <TableColumn id="bedscolumn" fx:id="bedscolumn" maxWidth="-1.0" minWidth="75.0" prefWidth="-1.0" text="Beds" />
             <TableColumn id="smokingcolumn" fx:id="smokingcolumn" maxWidth="-1.0" minWidth="75.0" prefWidth="-1.0" text="Smoking" />
-            <TableColumn id="adjoiningcolumn" fx:id="adjoiningcolumn" maxWidth="-1.0" minWidth="125.0" prefWidth="-1.0" text="Adjoining Room" />
+            <TableColumn id="adjoiningcolumn" fx:id="adjoiningcolumn" maxWidth="-1.0" minWidth="120.0" prefWidth="-1.0" text="Adjoining Room" />
             <TableColumn id="statuscolumn" fx:id="statuscolumn" maxWidth="-1.0" minWidth="75.0" prefWidth="-1.0" text="Status" />
-            <TableColumn id="priceRatecolumn" fx:id="priceRatecolumn" maxWidth="-1.0" minWidth="105.0" prefWidth="-1.0" text="Price Rate" />
+            <TableColumn id="priceRatecolumn" fx:id="priceRatecolumn" maxWidth="-1.0" minWidth="100.0" prefWidth="-1.0" text="Price Rate" />
         </columns>
       </TableView>
    </children>

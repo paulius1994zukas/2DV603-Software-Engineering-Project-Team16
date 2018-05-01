@@ -4,29 +4,36 @@ import java.util.Date;
 
 public class Room {
 
-    private String id;
+    private String roomID;
     private int quality;
-    private String adjoining;
     private int bedNumber;
-    public boolean smoking;
+    public String smoking;
+    private String adjoining;
+    private String status;
     private int maxRate;
+    private static String location;
 
-    public Room(String id, int quality, String adjoining, int bedNumber, boolean smoking,
-                        int maxRate) {
-        this.id = id;
+    public Room(){
+
+    }
+
+    public Room(String roomID, int quality, int bedNumber, String smoking, String adjoining,
+                String status, int maxRate) {
+        this.roomID = roomID;
         this.quality = quality;
-        this.adjoining = adjoining;
         this.bedNumber = bedNumber;
         this.smoking = smoking;
+        this.adjoining = adjoining;
+        this.status = status;
         this.maxRate = maxRate;
     }
 
-    public String getId() {
-        return id;
+    public String getRoomID() {
+        return roomID;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setRoomID(String roomID) {
+        this.roomID = roomID;
     }
 
     public int getQuality() {
@@ -37,14 +44,6 @@ public class Room {
         this.quality = quality;
     }
 
-    public String getAdjoining() {
-        return adjoining;
-    }
-
-    public void setAdjoining(String adjoining) {
-        this.adjoining = adjoining;
-    }
-
     public int getBedNumber() {
         return bedNumber;
     }
@@ -53,12 +52,28 @@ public class Room {
         this.bedNumber = bedNumber;
     }
 
-    public boolean isSmoking() {
+    public String isSmoking() {
         return smoking;
     }
 
-    public void setSmoking(boolean smoking) {
+    public void setSmoking(String smoking) {
         this.smoking = smoking;
+    }
+
+    public String getAdjoining() {
+        return adjoining;
+    }
+
+    public void setAdjoining(String adjoining) {
+        this.adjoining = adjoining;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public int getMaxRate() {
@@ -67,5 +82,13 @@ public class Room {
 
     public void setMaxRate(int maxRate) {
         this.maxRate = maxRate;
+    }
+
+    public static String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

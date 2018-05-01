@@ -2,6 +2,7 @@ package hotel.views.main;
 
 import com.jfoenix.controls.JFXComboBox;
 import hotel.helpers.HotelHelper;
+import hotel.models.Room;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,6 +15,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
+    private String location;
     @FXML
     private JFXComboBox locationComboBox;
     @FXML
@@ -45,12 +47,19 @@ public class MainController implements Initializable {
     @FXML
     private VBox room209VBox;
 
+    Room room = new Room();
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ObservableList locations = FXCollections.observableArrayList();
         locations.add("Kalmar");
         locations.add("Växjö");
         locationComboBox.setItems(locations);
+    }
+
+    @FXML
+    private void onLocationComboBoxChanged(ActionEvent event) {
+        room.setLocation(locationComboBox.getSelectionModel().getSelectedItem().toString());
     }
 
     @FXML
