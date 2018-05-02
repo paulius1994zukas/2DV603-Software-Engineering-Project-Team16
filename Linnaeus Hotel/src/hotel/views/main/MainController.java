@@ -55,6 +55,8 @@ public class MainController implements Initializable {
         locations.add("Kalmar");
         locations.add("Växjö");
         locationComboBox.setItems(locations);
+        locationComboBox.getSelectionModel().select(1);
+        room.setLocation(locationComboBox.getSelectionModel().getSelectedItem().toString());
     }
 
     @FXML

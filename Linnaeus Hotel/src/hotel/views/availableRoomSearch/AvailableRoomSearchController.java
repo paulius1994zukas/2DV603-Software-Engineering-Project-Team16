@@ -3,6 +3,7 @@ package hotel.views.availableRoomSearch;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
@@ -28,7 +29,9 @@ public class AvailableRoomSearchController implements Initializable {
     ObservableList<Room> roomsList = FXCollections.observableArrayList();
 
     @FXML
-    private JFXDatePicker datePicker;
+    private JFXDatePicker checkInDatePicker;
+    @FXML
+    private JFXDatePicker checkOutDatePicker;
     @FXML
     private JFXComboBox qualityLevelCmbBox;
     @FXML
@@ -37,14 +40,6 @@ public class AvailableRoomSearchController implements Initializable {
     private JFXCheckBox smokingChckBox;
     @FXML
     private JFXCheckBox adjoiningChckBox;
-    @FXML
-    private JFXCheckBox cleanChckBox;
-    @FXML
-    private JFXCheckBox dirtyChckBox;
-    @FXML
-    private JFXCheckBox inspectedChckBox;
-    @FXML
-    private JFXCheckBox outOfOrderChckBox;
     @FXML
     private JFXButton searchBtn;
     @FXML
@@ -74,13 +69,12 @@ public class AvailableRoomSearchController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         initCol();
         location = Room.getLocation();
-        System.out.println(location);
         loadData();
         setQualityLevels();
         setBedCount();
     }
 
-    private void setQualityLevels(){
+    private void setQualityLevels() {
         ObservableList qualityLevels = FXCollections.observableArrayList();
         qualityLevels.add("1");
         qualityLevels.add("2");
@@ -90,7 +84,7 @@ public class AvailableRoomSearchController implements Initializable {
         qualityLevelCmbBox.setItems(qualityLevels);
     }
 
-    private void setBedCount(){
+    private void setBedCount() {
         ObservableList bedCounts = FXCollections.observableArrayList();
         bedCounts.add("1");
         bedCounts.add("2");
@@ -126,6 +120,29 @@ public class AvailableRoomSearchController implements Initializable {
                         rs.getInt("MAXRATE")));
             }
             availableRoomsTableView.setItems(roomsList);
+        } catch (Exception ex) {
+            System.err.println(ex);
+        } finally {
+            connection.closeConnection();
+        }
+    }
+
+    @FXML
+    private void onSearchBtnClick(ActionEvent event) {
+        DbConnect connection = new DbConnect();
+        ArrayList parameters = new ArrayList();
+        ArrayList rooms = new ArrayList();
+        parameters.add(checkInDatePicker.getValue());
+        parameters.add(checkOutDatePicker.getValue());
+        try {
+            String query = "SELECT ROOMID FROM RESERVATIONS WHERE CHECKINDATE=? AND CHECKOUTDATE=?";
+            ResultSet rs = connection.executeWithParameters(query, parameters);
+            while (rs.next()) {
+                rooms.add(rs.getString("roomid"));
+            }
+            rooms.forEach(room -> {
+                roomsList.removeIf(roomId -> roomId.getRoomID().equals(room.toString()));
+            });
         } catch (Exception ex) {
             System.err.println(ex);
         } finally {
@@ -217,52 +234,4 @@ public class AvailableRoomSearchController implements Initializable {
     private void closeStage(ActionEvent event) {
 //        getStage().close();
     }
-
-    public static class Member {
-
-        private final SimpleStringProperty name;
-        private final SimpleStringProperty id;
-        private final SimpleStringProperty mobile;
-        private final SimpleStringProperty email;
-
-        public Member(String name, String id, String mobile, String email) {
-            this.name = new SimpleStringProperty(name);
-            this.id = new SimpleStringProperty(id);
-            this.mobile = new SimpleStringProperty(mobile);
-            this.email = new SimpleStringProperty(email);
-        }
-
-        public String getName() {
-            return name.get();
-        }
-
-        public String getId() {
-            return id.get();
-        }
-
-        public String getMobile() {
-            return mobile.get();
-        }
-
-        public String getEmail() {
-            return email.get();
-        }
-
-    }
-
-    private void exampleOfSQL(){
-        DbConnect connection = new DbConnect();
-        ResultSet rs;
-        try {
-            rs = connection.execute("SELECT * FROM QUALITYLEVELS");
-            while (rs.next()) {
-                System.out.println(rs.getString("DESCRIPTION"));
-            }
-        } catch (Exception ex) {
-            System.out.print(ex);
-        } finally {
-            connection.closeConnection();
-        }
-    }
-
 }
