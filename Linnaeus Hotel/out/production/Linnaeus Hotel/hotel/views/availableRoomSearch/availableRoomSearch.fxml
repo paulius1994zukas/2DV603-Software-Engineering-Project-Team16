@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import javafx.geometry.Insets?>
@@ -31,8 +30,8 @@
       <JFXDatePicker id="checkOutDatePicker" fx:id="checkOutDatePicker" promptText="Check Out Date" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
       <JFXComboBox id="qualityLevelCmbBox" fx:id="qualityLevelCmbBox" promptText="Select Quality Level" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
       <JFXComboBox id="bedCountCmbBox" fx:id="bedCountCmbBox" layoutX="163.0" layoutY="140.0" promptText="Select Bed Count" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-      <JFXCheckBox id="smokingChckBox" fx:id="smokingChckBox" layoutX="310.0" layoutY="266.0" text="Smoking" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-      <JFXCheckBox id="adjoiningChckBox" fx:id="adjoiningChckBox" layoutX="10.0" layoutY="38.0" text="Adjoining" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <JFXComboBox id="smokingCmbBox" fx:id="smokingCmbBox" layoutX="206.0" layoutY="65.0" promptText="Smoking Allowed" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <JFXComboBox id="adjoiningCmbBox" fx:id="adjoiningCmbBox" layoutX="388.0" layoutY="30.0" promptText="Adjoining" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
       <JFXButton id="searchBtn" fx:id="searchBtn" onAction="#onSearchBtnClick" text="Search" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
       <VBox id="bottomRightBtnVBox" alignment="BOTTOM_RIGHT" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
          <children>

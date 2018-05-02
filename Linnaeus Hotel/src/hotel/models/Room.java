@@ -5,8 +5,8 @@ import java.util.Date;
 public class Room {
 
     private String roomID;
-    private int quality;
-    private int bedNumber;
+    private String quality;
+    private String bedNumber;
     public String smoking;
     private String adjoining;
     private String status;
@@ -17,7 +17,7 @@ public class Room {
 
     }
 
-    public Room(String roomID, int quality, int bedNumber, String smoking, String adjoining,
+    public Room(String roomID, String quality, String bedNumber, String smoking, String adjoining,
                 String status, int maxRate) {
         this.roomID = roomID;
         this.quality = quality;
@@ -36,23 +36,23 @@ public class Room {
         this.roomID = roomID;
     }
 
-    public int getQuality() {
+    public String getQuality() {
         return quality;
     }
 
-    public void setQuality(int quality) {
+    public void setQuality(String quality) {
         this.quality = quality;
     }
 
-    public int getBedNumber() {
+    public String getBedNumber() {
         return bedNumber;
     }
 
-    public void setBedNumber(int bedNumber) {
+    public void setBedNumber(String bedNumber) {
         this.bedNumber = bedNumber;
     }
 
-    public String isSmoking() {
+    public String getSmoking() {
         return smoking;
     }
 

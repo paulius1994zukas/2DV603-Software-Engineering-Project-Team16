@@ -37,9 +37,9 @@ public class AvailableRoomSearchController implements Initializable {
     @FXML
     private JFXComboBox bedCountCmbBox;
     @FXML
-    private JFXCheckBox smokingChckBox;
+    private JFXComboBox smokingCmbBox;
     @FXML
-    private JFXCheckBox adjoiningChckBox;
+    private JFXComboBox adjoiningCmbBox;
     @FXML
     private JFXButton searchBtn;
     @FXML
@@ -72,6 +72,8 @@ public class AvailableRoomSearchController implements Initializable {
         loadData();
         setQualityLevels();
         setBedCount();
+        setSmoking();
+        setAdjoining();
     }
 
     private void setQualityLevels() {
@@ -89,6 +91,20 @@ public class AvailableRoomSearchController implements Initializable {
         bedCounts.add("1");
         bedCounts.add("2");
         bedCountCmbBox.setItems(bedCounts);
+    }
+
+    private void setSmoking() {
+        ObservableList smoking = FXCollections.observableArrayList();
+        smoking.add("Yes");
+        smoking.add("No");
+        smokingCmbBox.setItems(smoking);
+    }
+
+    private void setAdjoining() {
+        ObservableList adjoining = FXCollections.observableArrayList();
+        adjoining.add("Yes");
+        adjoining.add("No");
+        adjoiningCmbBox.setItems(adjoining);
     }
 
     private void initCol() {
@@ -114,8 +130,8 @@ public class AvailableRoomSearchController implements Initializable {
             String query = "SELECT * FROM ROOMS WHERE LOCATION=?";
             ResultSet rs = connection.executeWithParameters(query, parameters);
             while (rs.next()) {
-                roomsList.add(new Room(rs.getString("ID"), rs.getInt("QUALITY"),
-                        rs.getInt("BEDNUMBER"), rs.getString("SMOKING"),
+                roomsList.add(new Room(rs.getString("ID"), rs.getString("QUALITY"),
+                        rs.getString("BEDNUMBER"), rs.getString("SMOKING"),
                         rs.getString("ADJOINING"), rs.getString("STATUS"),
                         rs.getInt("MAXRATE")));
             }
@@ -129,6 +145,7 @@ public class AvailableRoomSearchController implements Initializable {
 
     @FXML
     private void onSearchBtnClick(ActionEvent event) {
+        loadData();
         DbConnect connection = new DbConnect();
         ArrayList parameters = new ArrayList();
         ArrayList rooms = new ArrayList();
@@ -141,8 +158,23 @@ public class AvailableRoomSearchController implements Initializable {
                 rooms.add(rs.getString("roomid"));
             }
             rooms.forEach(room -> {
-                roomsList.removeIf(roomId -> roomId.getRoomID().equals(room.toString()));
+                roomsList.removeIf(room2 -> room2.getRoomID().equals(room.toString()));
             });
+            if(bedCountCmbBox.getSelectionModel().getSelectedItem() != null){
+                roomsList.removeIf(room -> !room.getBedNumber().equals(bedCountCmbBox.getSelectionModel().getSelectedItem().toString()));
+            }
+            if(qualityLevelCmbBox.getSelectionModel().getSelectedItem() != null){
+                roomsList.removeIf(room -> !room.getQuality().equals(qualityLevelCmbBox.getSelectionModel().getSelectedItem().toString()));
+            }
+            if(smokingCmbBox.getSelectionModel().getSelectedItem() != null){
+                roomsList.removeIf(room -> !room.getSmoking().equals(smokingCmbBox.getSelectionModel().getSelectedItem().toString()));
+            }
+            if(adjoiningCmbBox.getSelectionModel().getSelectedItem() != null){
+                if(adjoiningCmbBox.getSelectionModel().getSelectedItem() == "No")
+                    roomsList.removeIf(room -> !room.getAdjoining().equals(adjoiningCmbBox.getSelectionModel().getSelectedItem().toString()));
+                else
+                    roomsList.removeIf(room -> room.getAdjoining().equals("No"));
+            }
         } catch (Exception ex) {
             System.err.println(ex);
         } finally {
