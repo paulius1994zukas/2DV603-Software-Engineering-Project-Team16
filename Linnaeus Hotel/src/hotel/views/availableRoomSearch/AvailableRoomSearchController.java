@@ -135,7 +135,7 @@ public class AvailableRoomSearchController implements Initializable {
         parameters.add(checkInDatePicker.getValue());
         parameters.add(checkOutDatePicker.getValue());
         try {
-            String query = "SELECT ROOMID FROM RESERVATIONS WHERE CHECKINDATE=? AND CHECKOUTDATE=?";
+            String query = "SELECT ROOMID FROM RESERVATIONS WHERE CHECKINDATE BETWEEN ? AND ?";
             ResultSet rs = connection.executeWithParameters(query, parameters);
             while (rs.next()) {
                 rooms.add(rs.getString("roomid"));
