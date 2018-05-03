@@ -67,7 +67,7 @@ public class MainController implements Initializable {
     @FXML
     private void onGuestAccountBtnClick(ActionEvent event) {
         HotelHelper.loadWindow(getClass().getResource("/hotel/views/guestAccount/guestAccount.fxml"),
-                "Guest Account", null, true);
+                "Guest Account", null, false);
     }
 
     @FXML

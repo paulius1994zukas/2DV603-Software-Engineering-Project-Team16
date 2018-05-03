@@ -9,7 +9,6 @@ public class Room {
     private String bedNumber;
     public String smoking;
     private String adjoining;
-    private String status;
     private int maxRate;
     private static String location;
 
@@ -17,14 +16,12 @@ public class Room {
 
     }
 
-    public Room(String roomID, String quality, String bedNumber, String smoking, String adjoining,
-                String status, int maxRate) {
+    public Room(String roomID, String quality, String bedNumber, String smoking, String adjoining, int maxRate) {
         this.roomID = roomID;
         this.quality = quality;
         this.bedNumber = bedNumber;
         this.smoking = smoking;
         this.adjoining = adjoining;
-        this.status = status;
         this.maxRate = maxRate;
     }
 
@@ -66,14 +63,6 @@ public class Room {
 
     public void setAdjoining(String adjoining) {
         this.adjoining = adjoining;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public int getMaxRate() {

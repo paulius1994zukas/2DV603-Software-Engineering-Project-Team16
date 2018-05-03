@@ -4,6 +4,8 @@
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -12,17 +14,17 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane id="mainGrid" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.views.availableRoomSearch.AvailableRoomSearchController">
+<GridPane id="mainGrid" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.views.availableRoomSearch.AvailableRoomSearchController">
   <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
-    <ColumnConstraints hgrow="SOMETIMES" />
-    <ColumnConstraints hgrow="SOMETIMES" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.0" minWidth="1.0" prefWidth="1.0" />
-      <ColumnConstraints hgrow="SOMETIMES" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" />
   </columnConstraints>
   <rowConstraints>
       <RowConstraints vgrow="SOMETIMES" />
       <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
       <RowConstraints vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
@@ -32,25 +34,26 @@
       <JFXComboBox id="bedCountCmbBox" fx:id="bedCountCmbBox" layoutX="163.0" layoutY="140.0" promptText="Select Bed Count" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
       <JFXComboBox id="smokingCmbBox" fx:id="smokingCmbBox" layoutX="206.0" layoutY="65.0" promptText="Smoking Allowed" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
       <JFXComboBox id="adjoiningCmbBox" fx:id="adjoiningCmbBox" layoutX="388.0" layoutY="30.0" promptText="Adjoining" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-      <JFXButton id="searchBtn" fx:id="searchBtn" onAction="#onSearchBtnClick" text="Search" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-      <VBox id="bottomRightBtnVBox" alignment="BOTTOM_RIGHT" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-         <children>
-            <JFXButton id="roomPlanBtn" fx:id="roomPlanBtn" text="Room Plan" />
-            <JFXButton id="reserveBtn" fx:id="reserveBtn" alignment="CENTER_RIGHT" contentDisplay="CENTER" text="Reserve" />
-         </children>
-      </VBox>
-      <TableView id="availableRoomsTableView" fx:id="availableRoomsTableView" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+      <JFXButton id="searchBtn" fx:id="searchBtn" onAction="#onSearchBtnClick" text="Search" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <VBox id="bottomRightBtnVBox" alignment="BOTTOM_RIGHT" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <TableView id="availableRoomsTableView" fx:id="availableRoomsTableView" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
         <columns>
           <TableColumn id="roomcolumn" fx:id="roomcolumn" maxWidth="-1.0" minWidth="85.0" prefWidth="-1.0" text="Room" />
           <TableColumn id="qualitycolumn" fx:id="qualitycolumn" maxWidth="-1.0" minWidth="75.0" prefWidth="-1.0" text="Quality" />
             <TableColumn id="bedscolumn" fx:id="bedscolumn" maxWidth="-1.0" minWidth="75.0" prefWidth="-1.0" text="Beds" />
             <TableColumn id="smokingcolumn" fx:id="smokingcolumn" maxWidth="-1.0" minWidth="75.0" prefWidth="-1.0" text="Smoking" />
             <TableColumn id="adjoiningcolumn" fx:id="adjoiningcolumn" maxWidth="-1.0" minWidth="120.0" prefWidth="-1.0" text="Adjoining Room" />
-            <TableColumn id="statuscolumn" fx:id="statuscolumn" maxWidth="-1.0" minWidth="75.0" prefWidth="-1.0" text="Status" />
             <TableColumn id="priceRatecolumn" fx:id="priceRatecolumn" maxWidth="-1.0" minWidth="100.0" prefWidth="-1.0" text="Price Rate" />
         </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem id="reserveRoomCntxtBtn" fx:id="reserveRoomCntxtBtn" mnemonicParsing="false" onAction="#onReserveRoomCntxtBtnClick" text="Reserve Room" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
       </TableView>
-      <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="3" GridPane.rowSpan="3" />
+      <Separator prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="2" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

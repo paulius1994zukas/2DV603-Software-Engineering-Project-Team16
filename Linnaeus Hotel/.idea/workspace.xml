@@ -15,7 +15,7 @@
       <file leaf-file-name="ReservationsListController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hotel/views/reservations/ReservationsListController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
+            <state relative-caret-position="0">
               <caret line="66" column="0" lean-forward="false" selection-start-line="56" selection-start-column="8" selection-end-line="66" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -29,8 +29,8 @@
       <file leaf-file-name="GuestAccountController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hotel/views/guestAccount/GuestAccountController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="222" column="58" lean-forward="false" selection-start-line="221" selection-start-column="8" selection-end-line="222" selection-end-column="58" />
+            <state relative-caret-position="-22">
+              <caret line="237" column="13" lean-forward="false" selection-start-line="237" selection-start-column="13" selection-end-line="237" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -38,44 +38,50 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="GuestAccount.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hotel/models/GuestAccount.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-67">
+              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Room.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hotel/models/Room.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1350">
-              <caret line="54" column="22" lean-forward="false" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+            <state relative-caret-position="75">
+              <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
               <folding>
-                <element signature="e#736#737#0" expanded="true" />
-                <element signature="e#765#766#0" expanded="true" />
-                <element signature="e#809#810#0" expanded="true" />
-                <element signature="e#845#846#0" expanded="true" />
-                <element signature="e#879#880#0" expanded="true" />
-                <element signature="e#909#910#0" expanded="true" />
-                <element signature="e#955#956#0" expanded="true" />
-                <element signature="e#993#994#0" expanded="true" />
-                <element signature="e#1029#1030#0" expanded="true" />
-                <element signature="e#1061#1062#0" expanded="true" />
-                <element signature="e#1111#1112#0" expanded="true" />
-                <element signature="e#1153#1154#0" expanded="true" />
-                <element signature="e#1187#1188#0" expanded="true" />
-                <element signature="e#1217#1218#0" expanded="true" />
-                <element signature="e#1263#1264#0" expanded="true" />
-                <element signature="e#1301#1302#0" expanded="true" />
-                <element signature="e#1337#1338#0" expanded="true" />
-                <element signature="e#1369#1370#0" expanded="true" />
-                <element signature="e#1419#1420#0" expanded="true" />
-                <element signature="e#1461#1462#0" expanded="true" />
-                <element signature="e#1494#1495#0" expanded="true" />
-                <element signature="e#1523#1524#0" expanded="true" />
-                <element signature="e#1567#1568#0" expanded="true" />
-                <element signature="e#1603#1604#0" expanded="true" />
-                <element signature="e#1634#1635#0" expanded="true" />
-                <element signature="e#1664#1665#0" expanded="true" />
-                <element signature="e#1707#1708#0" expanded="true" />
-                <element signature="e#1745#1746#0" expanded="true" />
-                <element signature="e#1787#1788#0" expanded="true" />
-                <element signature="e#1818#1819#0" expanded="true" />
-                <element signature="e#1866#1867#0" expanded="true" />
-                <element signature="e#1906#1907#0" expanded="true" />
+                <element signature="e#648#649#0" expanded="true" />
+                <element signature="e#677#678#0" expanded="true" />
+                <element signature="e#721#722#0" expanded="true" />
+                <element signature="e#757#758#0" expanded="true" />
+                <element signature="e#791#792#0" expanded="true" />
+                <element signature="e#821#822#0" expanded="true" />
+                <element signature="e#867#868#0" expanded="true" />
+                <element signature="e#905#906#0" expanded="true" />
+                <element signature="e#941#942#0" expanded="true" />
+                <element signature="e#973#974#0" expanded="true" />
+                <element signature="e#1023#1024#0" expanded="true" />
+                <element signature="e#1065#1066#0" expanded="true" />
+                <element signature="e#1099#1100#0" expanded="true" />
+                <element signature="e#1129#1130#0" expanded="true" />
+                <element signature="e#1175#1176#0" expanded="true" />
+                <element signature="e#1213#1214#0" expanded="true" />
+                <element signature="e#1249#1250#0" expanded="true" />
+                <element signature="e#1281#1282#0" expanded="true" />
+                <element signature="e#1331#1332#0" expanded="true" />
+                <element signature="e#1373#1374#0" expanded="true" />
+                <element signature="e#1404#1405#0" expanded="true" />
+                <element signature="e#1434#1435#0" expanded="true" />
+                <element signature="e#1477#1478#0" expanded="true" />
+                <element signature="e#1515#1516#0" expanded="true" />
+                <element signature="e#1557#1558#0" expanded="true" />
+                <element signature="e#1588#1589#0" expanded="true" />
+                <element signature="e#1636#1637#0" expanded="true" />
+                <element signature="e#1676#1677#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,8 +90,8 @@
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hotel/views/main/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="58" column="71" lean-forward="false" selection-start-line="58" selection-start-column="71" selection-end-line="58" selection-end-column="71" />
+            <state relative-caret-position="-222">
+              <caret line="68" column="61" lean-forward="false" selection-start-line="68" selection-start-column="61" selection-end-line="68" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -93,15 +99,49 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AvailableRoomSearchController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AvailableRoomSearchController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hotel/views/availableRoomSearch/AvailableRoomSearchController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="161" column="15" lean-forward="true" selection-start-line="161" selection-start-column="15" selection-end-line="161" selection-end-column="15" />
+            <state relative-caret-position="200">
+              <caret line="149" column="63" lean-forward="false" selection-start-line="149" selection-start-column="42" selection-end-line="149" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8377#8378#0" expanded="true" />
-                <element signature="e#8403#8404#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DbConnect.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/hotel/database/DbConnect.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="29" column="33" lean-forward="false" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HotelHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hotel/helpers/HotelHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="77" column="19" lean-forward="false" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlertMaker.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hotel/helpers/AlertMaker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -181,15 +221,16 @@
         <option value="$PROJECT_DIR$/src/hotel/models/Reservation.java" />
         <option value="$PROJECT_DIR$/src/hotel/models/GuestAccount.java" />
         <option value="$PROJECT_DIR$/src/hotel/views/reservations/ReservationsListController.java" />
-        <option value="$PROJECT_DIR$/src/hotel/database/DbConnect.java" />
         <option value="$PROJECT_DIR$/src/hotel/views/availableRoomSearch/AvailableRoomSearchLoader.java" />
         <option value="$PROJECT_DIR$/src/hotel/views/guestAccount/GuestAccountLoader.java" />
         <option value="$PROJECT_DIR$/src/hotel/views/main/Main.java" />
         <option value="$PROJECT_DIR$/src/hotel/views/reservations/ReservationsListLoader.java" />
-        <option value="$PROJECT_DIR$/src/hotel/views/guestAccount/GuestAccountController.java" />
-        <option value="$PROJECT_DIR$/src/hotel/views/main/MainController.java" />
         <option value="$PROJECT_DIR$/src/hotel/models/Room.java" />
+        <option value="$PROJECT_DIR$/src/hotel/helpers/AlertMaker.java" />
         <option value="$PROJECT_DIR$/src/hotel/views/availableRoomSearch/AvailableRoomSearchController.java" />
+        <option value="$PROJECT_DIR$/src/hotel/views/main/MainController.java" />
+        <option value="$PROJECT_DIR$/src/hotel/database/DbConnect.java" />
+        <option value="$PROJECT_DIR$/src/hotel/views/guestAccount/GuestAccountController.java" />
       </list>
     </option>
   </component>
@@ -199,7 +240,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="width" value="981" />
     <option name="height" value="1030" />
@@ -219,6 +260,95 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
+              <item name="hotel" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
+              <item name="hotel" type="1f31426a:PackageElementNode" />
+              <item name="database" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
+              <item name="hotel" type="1f31426a:PackageElementNode" />
+              <item name="helpers" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
+              <item name="hotel" type="1f31426a:PackageElementNode" />
+              <item name="models" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
+              <item name="hotel" type="1f31426a:PackageElementNode" />
+              <item name="views" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
+              <item name="hotel" type="1f31426a:PackageElementNode" />
+              <item name="views" type="1f31426a:PackageElementNode" />
+              <item name="availableRoomSearch" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
+              <item name="hotel" type="1f31426a:PackageElementNode" />
+              <item name="views" type="1f31426a:PackageElementNode" />
+              <item name="guestAccount" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
+              <item name="hotel" type="1f31426a:PackageElementNode" />
+              <item name="views" type="1f31426a:PackageElementNode" />
+              <item name="help" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
+              <item name="hotel" type="1f31426a:PackageElementNode" />
+              <item name="views" type="1f31426a:PackageElementNode" />
+              <item name="main" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
+              <item name="hotel" type="1f31426a:PackageElementNode" />
+              <item name="views" type="1f31426a:PackageElementNode" />
+              <item name="reservations" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
+              <item name="resources" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
+              <item name="resources" type="1f31426a:PackageElementNode" />
+              <item name="database" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -309,95 +439,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
-              <item name="hotel" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
-              <item name="hotel" type="1f31426a:PackageElementNode" />
-              <item name="database" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
-              <item name="hotel" type="1f31426a:PackageElementNode" />
-              <item name="helpers" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
-              <item name="hotel" type="1f31426a:PackageElementNode" />
-              <item name="models" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
-              <item name="hotel" type="1f31426a:PackageElementNode" />
-              <item name="views" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
-              <item name="hotel" type="1f31426a:PackageElementNode" />
-              <item name="views" type="1f31426a:PackageElementNode" />
-              <item name="availableRoomSearch" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
-              <item name="hotel" type="1f31426a:PackageElementNode" />
-              <item name="views" type="1f31426a:PackageElementNode" />
-              <item name="guestAccount" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
-              <item name="hotel" type="1f31426a:PackageElementNode" />
-              <item name="views" type="1f31426a:PackageElementNode" />
-              <item name="help" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
-              <item name="hotel" type="1f31426a:PackageElementNode" />
-              <item name="views" type="1f31426a:PackageElementNode" />
-              <item name="main" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
-              <item name="hotel" type="1f31426a:PackageElementNode" />
-              <item name="views" type="1f31426a:PackageElementNode" />
-              <item name="reservations" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
-              <item name="resources" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Linnaeus Hotel" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Linnaeus Hotel" type="616d4139:PackageViewModuleNode" />
-              <item name="resources" type="1f31426a:PackageElementNode" />
-              <item name="database" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -575,12 +616,13 @@
       <workItem from="1525027473062" duration="5558000" />
       <workItem from="1525079635051" duration="25670000" />
       <workItem from="1525274895341" duration="2540000" />
-      <workItem from="1525279889936" duration="11077000" />
+      <workItem from="1525279889936" duration="11141000" />
+      <workItem from="1525335746367" duration="9719000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100516000" />
+    <option name="totallyTimeSpent" value="110299000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -592,7 +634,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -608,9 +650,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293979" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28216216" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28702703" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293979" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972972" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -622,6 +663,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293979" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -632,13 +674,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="13" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/hotel/ui/main/MainController.java" />
-    <entry file="file://$PROJECT_DIR$/src/hotel/data/wrapper/Book.java" />
     <entry file="file://$PROJECT_DIR$/src/hotel/ui/main/main.fxml" />
     <entry file="file://$PROJECT_DIR$/src/hotel/data/model/Room.java" />
     <entry file="file://$PROJECT_DIR$/src/hotel/data/model/Reservation.java" />
@@ -841,43 +881,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hotel/models/GuestAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1476">
-          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-          <folding>
-            <element signature="e#740#741#0" expanded="false" />
-            <element signature="e#765#766#0" expanded="false" />
-            <element signature="e#801#802#0" expanded="false" />
-            <element signature="e#829#830#0" expanded="false" />
-            <element signature="e#865#866#0" expanded="false" />
-            <element signature="e#897#898#0" expanded="false" />
-            <element signature="e#947#948#0" expanded="false" />
-            <element signature="e#989#990#0" expanded="false" />
-            <element signature="e#1024#1025#0" expanded="false" />
-            <element signature="e#1055#1056#0" expanded="false" />
-            <element signature="e#1103#1104#0" expanded="false" />
-            <element signature="e#1143#1144#0" expanded="false" />
-            <element signature="e#1177#1178#0" expanded="false" />
-            <element signature="e#1207#1208#0" expanded="false" />
-            <element signature="e#1253#1254#0" expanded="false" />
-            <element signature="e#1291#1292#0" expanded="false" />
-            <element signature="e#1329#1330#0" expanded="false" />
-            <element signature="e#1363#1364#0" expanded="false" />
-            <element signature="e#1417#1418#0" expanded="false" />
-            <element signature="e#1463#1464#0" expanded="false" />
-            <element signature="e#1506#1507#0" expanded="false" />
-            <element signature="e#1545#1546#0" expanded="false" />
-            <element signature="e#1609#1610#0" expanded="false" />
-            <element signature="e#1665#1666#0" expanded="false" />
-            <element signature="e#1706#1707#0" expanded="false" />
-            <element signature="e#1743#1744#0" expanded="false" />
-            <element signature="e#1803#1804#0" expanded="false" />
-            <element signature="e#1855#1856#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../../mysql-connector-java-8.0.11/mysql-connector-java-8.0.11.jar!/com/mysql/cj/jdbc/StatementImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
@@ -896,16 +899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="164" column="0" lean-forward="false" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hotel/database/DbConnect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -939,16 +932,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hotel/helpers/HotelHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hotel/views/help/HelpController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -969,22 +952,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hotel/views/reservations/ReservationsListController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
+        <state relative-caret-position="0">
           <caret line="66" column="0" lean-forward="false" selection-start-line="56" selection-start-column="8" selection-end-line="66" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3540#3541#0" expanded="true" />
             <element signature="e#3574#3575#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hotel/views/guestAccount/GuestAccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="222" column="58" lean-forward="false" selection-start-line="221" selection-start-column="8" selection-end-line="222" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -997,65 +970,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hotel/views/main/MainController.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/function/Predicate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="58" column="71" lean-forward="false" selection-start-line="58" selection-start-column="71" selection-end-line="58" selection-end-column="71" />
+        <state relative-caret-position="-1122">
+          <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hotel/helpers/HotelHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="77" column="19" lean-forward="false" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/hotel/helpers/AlertMaker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hotel/views/main/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-222">
+          <caret line="68" column="61" lean-forward="false" selection-start-line="68" selection-start-column="61" selection-end-line="68" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hotel/models/GuestAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-67">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/hotel/models/Room.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="54" column="22" lean-forward="false" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+        <state relative-caret-position="75">
+          <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
           <folding>
-            <element signature="e#736#737#0" expanded="true" />
-            <element signature="e#765#766#0" expanded="true" />
-            <element signature="e#809#810#0" expanded="true" />
-            <element signature="e#845#846#0" expanded="true" />
-            <element signature="e#879#880#0" expanded="true" />
-            <element signature="e#909#910#0" expanded="true" />
-            <element signature="e#955#956#0" expanded="true" />
-            <element signature="e#993#994#0" expanded="true" />
-            <element signature="e#1029#1030#0" expanded="true" />
-            <element signature="e#1061#1062#0" expanded="true" />
-            <element signature="e#1111#1112#0" expanded="true" />
-            <element signature="e#1153#1154#0" expanded="true" />
-            <element signature="e#1187#1188#0" expanded="true" />
-            <element signature="e#1217#1218#0" expanded="true" />
-            <element signature="e#1263#1264#0" expanded="true" />
-            <element signature="e#1301#1302#0" expanded="true" />
-            <element signature="e#1337#1338#0" expanded="true" />
-            <element signature="e#1369#1370#0" expanded="true" />
-            <element signature="e#1419#1420#0" expanded="true" />
-            <element signature="e#1461#1462#0" expanded="true" />
-            <element signature="e#1494#1495#0" expanded="true" />
-            <element signature="e#1523#1524#0" expanded="true" />
-            <element signature="e#1567#1568#0" expanded="true" />
-            <element signature="e#1603#1604#0" expanded="true" />
-            <element signature="e#1634#1635#0" expanded="true" />
-            <element signature="e#1664#1665#0" expanded="true" />
-            <element signature="e#1707#1708#0" expanded="true" />
-            <element signature="e#1745#1746#0" expanded="true" />
-            <element signature="e#1787#1788#0" expanded="true" />
-            <element signature="e#1818#1819#0" expanded="true" />
-            <element signature="e#1866#1867#0" expanded="true" />
-            <element signature="e#1906#1907#0" expanded="true" />
+            <element signature="e#648#649#0" expanded="true" />
+            <element signature="e#677#678#0" expanded="true" />
+            <element signature="e#721#722#0" expanded="true" />
+            <element signature="e#757#758#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#821#822#0" expanded="true" />
+            <element signature="e#867#868#0" expanded="true" />
+            <element signature="e#905#906#0" expanded="true" />
+            <element signature="e#941#942#0" expanded="true" />
+            <element signature="e#973#974#0" expanded="true" />
+            <element signature="e#1023#1024#0" expanded="true" />
+            <element signature="e#1065#1066#0" expanded="true" />
+            <element signature="e#1099#1100#0" expanded="true" />
+            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="e#1175#1176#0" expanded="true" />
+            <element signature="e#1213#1214#0" expanded="true" />
+            <element signature="e#1249#1250#0" expanded="true" />
+            <element signature="e#1281#1282#0" expanded="true" />
+            <element signature="e#1331#1332#0" expanded="true" />
+            <element signature="e#1373#1374#0" expanded="true" />
+            <element signature="e#1404#1405#0" expanded="true" />
+            <element signature="e#1434#1435#0" expanded="true" />
+            <element signature="e#1477#1478#0" expanded="true" />
+            <element signature="e#1515#1516#0" expanded="true" />
+            <element signature="e#1557#1558#0" expanded="true" />
+            <element signature="e#1588#1589#0" expanded="true" />
+            <element signature="e#1636#1637#0" expanded="true" />
+            <element signature="e#1676#1677#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hotel/views/guestAccount/GuestAccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="237" column="13" lean-forward="false" selection-start-line="237" selection-start-column="13" selection-end-line="237" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hotel/views/availableRoomSearch/AvailableRoomSearchController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="161" column="15" lean-forward="true" selection-start-line="161" selection-start-column="15" selection-end-line="161" selection-end-column="15" />
+        <state relative-caret-position="200">
+          <caret line="149" column="63" lean-forward="false" selection-start-line="149" selection-start-column="42" selection-end-line="149" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8377#8378#0" expanded="true" />
-            <element signature="e#8403#8404#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hotel/database/DbConnect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="29" column="33" lean-forward="false" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

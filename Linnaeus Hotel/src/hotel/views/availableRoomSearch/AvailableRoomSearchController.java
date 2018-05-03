@@ -1,20 +1,11 @@
 package hotel.views.availableRoomSearch;
 
-import java.net.URL;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.ResourceBundle;
-
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import hotel.database.DbConnect;
-import hotel.models.Reservation;
+import hotel.helpers.AlertMaker;
 import hotel.models.Room;
-import hotel.views.main.MainController;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,6 +14,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.net.URL;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class AvailableRoomSearchController implements Initializable {
 
@@ -43,10 +39,6 @@ public class AvailableRoomSearchController implements Initializable {
     @FXML
     private JFXButton searchBtn;
     @FXML
-    private JFXButton roomPlanBtn;
-    @FXML
-    private JFXButton reserveBtn;
-    @FXML
     private TableView<Room> availableRoomsTableView;
     @FXML
     private TableColumn<Room, String> roomcolumn;
@@ -58,8 +50,6 @@ public class AvailableRoomSearchController implements Initializable {
     private TableColumn<Room, String> smokingcolumn;
     @FXML
     private TableColumn<Room, String> adjoiningcolumn;
-    @FXML
-    private TableColumn<Room, String> statuscolumn;
     @FXML
     private TableColumn<Room, String> priceRatecolumn;
 
@@ -113,7 +103,6 @@ public class AvailableRoomSearchController implements Initializable {
         bedscolumn.setCellValueFactory(new PropertyValueFactory<>("bedNumber"));
         smokingcolumn.setCellValueFactory(new PropertyValueFactory<>("smoking"));
         adjoiningcolumn.setCellValueFactory(new PropertyValueFactory<>("adjoining"));
-        statuscolumn.setCellValueFactory(new PropertyValueFactory<>("status"));
         priceRatecolumn.setCellValueFactory(new PropertyValueFactory<>("maxRate"));
     }
 
@@ -132,8 +121,7 @@ public class AvailableRoomSearchController implements Initializable {
             while (rs.next()) {
                 roomsList.add(new Room(rs.getString("ID"), rs.getString("QUALITY"),
                         rs.getString("BEDNUMBER"), rs.getString("SMOKING"),
-                        rs.getString("ADJOINING"), rs.getString("STATUS"),
-                        rs.getInt("MAXRATE")));
+                        rs.getString("ADJOINING"), rs.getInt("MAXRATE")));
             }
             availableRoomsTableView.setItems(roomsList);
         } catch (Exception ex) {
@@ -145,105 +133,58 @@ public class AvailableRoomSearchController implements Initializable {
 
     @FXML
     private void onSearchBtnClick(ActionEvent event) {
-        loadData();
-        DbConnect connection = new DbConnect();
-        ArrayList parameters = new ArrayList();
-        ArrayList rooms = new ArrayList();
-        parameters.add(checkInDatePicker.getValue());
-        parameters.add(checkOutDatePicker.getValue());
-        try {
-            String query = "SELECT ROOMID FROM RESERVATIONS WHERE CHECKINDATE BETWEEN ? AND ?";
-            ResultSet rs = connection.executeWithParameters(query, parameters);
-            while (rs.next()) {
-                rooms.add(rs.getString("roomid"));
+        if ((checkInDatePicker.getValue() == null) || (checkOutDatePicker.getValue() == null)) {
+            AlertMaker alert = new AlertMaker();
+            alert.showSimpleAlert("Oops! Forgot something?","You have left " +
+                    "check in or check out date fields empty. Please choose two dates before " +
+                    "proceeding to Search.");
+        } else {
+            loadData();
+            DbConnect connection = new DbConnect();
+            ArrayList parameters = new ArrayList();
+            ArrayList rooms = new ArrayList();
+            parameters.add(checkInDatePicker.getValue());
+            parameters.add(checkOutDatePicker.getValue());
+            try {
+                String query = "SELECT ROOMID FROM RESERVATIONS WHERE CHECKINDATE BETWEEN ? AND ?";
+                ResultSet rs = connection.executeWithParameters(query, parameters);
+                while (rs.next()) {
+                    rooms.add(rs.getString("roomid"));
+                }
+                rooms.forEach(room -> {
+                    roomsList.removeIf(room2 -> room2.getRoomID().equals(room.toString()));
+                });
+                if (bedCountCmbBox.getSelectionModel().getSelectedItem() != null) {
+                    roomsList.removeIf(room -> !room.getBedNumber().equals(bedCountCmbBox.getSelectionModel().getSelectedItem().toString()));
+                }
+                if (qualityLevelCmbBox.getSelectionModel().getSelectedItem() != null) {
+                    roomsList.removeIf(room -> !room.getQuality().equals(qualityLevelCmbBox.getSelectionModel().getSelectedItem().toString()));
+                }
+                if (smokingCmbBox.getSelectionModel().getSelectedItem() != null) {
+                    roomsList.removeIf(room -> !room.getSmoking().equals(smokingCmbBox.getSelectionModel().getSelectedItem().toString()));
+                }
+                if (adjoiningCmbBox.getSelectionModel().getSelectedItem() != null) {
+                    if (adjoiningCmbBox.getSelectionModel().getSelectedItem() == "No")
+                        roomsList.removeIf(room -> !room.getAdjoining().equals(adjoiningCmbBox.getSelectionModel().getSelectedItem().toString()));
+                    else
+                        roomsList.removeIf(room -> room.getAdjoining().equals("No"));
+                }
+            } catch (Exception ex) {
+                System.err.println(ex);
+            } finally {
+                connection.closeConnection();
             }
-            rooms.forEach(room -> {
-                roomsList.removeIf(room2 -> room2.getRoomID().equals(room.toString()));
-            });
-            if(bedCountCmbBox.getSelectionModel().getSelectedItem() != null){
-                roomsList.removeIf(room -> !room.getBedNumber().equals(bedCountCmbBox.getSelectionModel().getSelectedItem().toString()));
-            }
-            if(qualityLevelCmbBox.getSelectionModel().getSelectedItem() != null){
-                roomsList.removeIf(room -> !room.getQuality().equals(qualityLevelCmbBox.getSelectionModel().getSelectedItem().toString()));
-            }
-            if(smokingCmbBox.getSelectionModel().getSelectedItem() != null){
-                roomsList.removeIf(room -> !room.getSmoking().equals(smokingCmbBox.getSelectionModel().getSelectedItem().toString()));
-            }
-            if(adjoiningCmbBox.getSelectionModel().getSelectedItem() != null){
-                if(adjoiningCmbBox.getSelectionModel().getSelectedItem() == "No")
-                    roomsList.removeIf(room -> !room.getAdjoining().equals(adjoiningCmbBox.getSelectionModel().getSelectedItem().toString()));
-                else
-                    roomsList.removeIf(room -> room.getAdjoining().equals("No"));
-            }
-        } catch (Exception ex) {
-            System.err.println(ex);
-        } finally {
-            connection.closeConnection();
         }
     }
 
     @FXML
-    private void handleMemberDelete(ActionEvent event) {
-//        //Fetch the selected row
-//        AvailableRoomSearchController.Member selectedForDeletion = tableView.getSelectionModel().getSelectedItem();
-//        if (selectedForDeletion == null) {
-//            AlertMaker.showErrorMessage("No member selected", "Please select a member for deletion.");
-//            return;
-//        }
-//        if (DatabaseHandler.getInstance().isMemberHasAnyBooks(selectedForDeletion)) {
-//            AlertMaker.showErrorMessage("Cant be deleted", "This member has some books.");
-//            return;
-//        }
-//        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-//        alert.setTitle("Deleting book");
-//        alert.setContentText("Are you sure want to delete " + selectedForDeletion.getName() + " ?");
-//        Optional<ButtonType> answer = alert.showAndWait();
-//        if (answer.get() == ButtonType.OK) {
-//            Boolean result = DatabaseHandler.getInstance().deleteMember(selectedForDeletion);
-//            if (result) {
-//                AlertMaker.showSimpleAlert("Book deleted", selectedForDeletion.getName() + " was deleted successfully.");
-//                list.remove(selectedForDeletion);
-//            } else {
-//                AlertMaker.showSimpleAlert("Failed", selectedForDeletion.getName() + " could not be deleted");
-//            }
-//        } else {
-//            AlertMaker.showSimpleAlert("Deletion cancelled", "Deletion process cancelled");
-//        }
-    }
-
-    @FXML
-    private void handleRefresh(ActionEvent event) {
-        loadData();
-    }
-
-    @FXML
-    private void handleMemberEdit(ActionEvent event) {
-//        //Fetch the selected row
-//        Member selectedForEdit = tableView.getSelectionModel().getSelectedItem();
-//        if (selectedForEdit == null) {
-//            AlertMaker.showErrorMessage("No member selected", "Please select a member for edit.");
-//            return;
-//        }
-//        try {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/hotel/ui/guestAccount/guestAccount.fxml"));
-//            Parent parent = loader.load();
-//
-//            GuestAccountController controller = (GuestAccountController) loader.getController();
-//            controller.infalteUI(selectedForEdit);
-//
-//            Stage stage = new Stage(StageStyle.DECORATED);
-//            stage.setTitle("Edit Member");
-//            stage.setScene(new Scene(parent));
-//            stage.show();
-//            HotelHelper.setStageIcon(stage);
-//
-//            stage.setOnCloseRequest((e) -> {
-//                handleRefresh(new ActionEvent());
-//            });
-//
-//        } catch (IOException ex) {
-//            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+    private void onReserveRoomCntxtBtnClick(ActionEvent event) {
+        //Fetch the selected row
+        Room selectedRoom = availableRoomsTableView.getSelectionModel().getSelectedItem();
+        if (selectedRoom == null) {
+            AlertMaker.showErrorMessage("No room selected", "Please select a room to be reserved.");
+            return;
+        }
     }
 
     @FXML

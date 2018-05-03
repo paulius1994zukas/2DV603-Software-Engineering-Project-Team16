@@ -11,11 +11,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DbConnect {
-    private static final String connection_url = "jdbc:mysql://sql11.freesqldatabase.com:3306/sql11225424";
-    private final String username = "sql11225424";
-    private final String password = "uWhgJij7AD";
+    private static final String connection_url = "jdbc:mysql://eu-cdbr-west-02.cleardb.net:3306/heroku_039d3586b62093c";
+    private final String username = "b93a451b88a7b2";
+    private final String password = "676a64b2";
     private Connection connectionDB;
-    public static final String dbName = "sql11225424";
+    public static final String dbName = "heroku_039d3586b62093c";
+    //Old database and connection. If needed for any reason.
+    //    private static final String connection_url = "jdbc:mysql://sql11.freesqldatabase.com:3306/sql11225424";
+    //    private final String username = "sql11225424";
+    //    private final String password = "uWhgJij7AD";
+    //    private Connection connectionDB;
+    //    public static final String dbName = "sql11225424";
 
     public DbConnect() {
     }
@@ -40,8 +46,8 @@ public class DbConnect {
         ResultSet rs = null;
         try {
             PreparedStatement stat = connectionDB.prepareStatement(sqlQuery);
-            for(int i=1; i<=parameters.size(); i++) {
-                stat.setString(i, parameters.get(i-1).toString());
+            for (int i = 1; i <= parameters.size(); i++) {
+                stat.setString(i, parameters.get(i - 1).toString());
             }
             stat.execute();
             rs = stat.getResultSet();

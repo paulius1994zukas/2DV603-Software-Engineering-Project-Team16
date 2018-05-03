@@ -73,8 +73,6 @@ public class GuestAccountController implements Initializable {
     @FXML
     private JFXTextField creditCardNumberTextField;
     @FXML
-    private JFXButton addReservationBtn;
-    @FXML
     private JFXTextField createFirstNameTxtField;
     @FXML
     private JFXTextField createLastNameTxtField;
@@ -111,27 +109,6 @@ public class GuestAccountController implements Initializable {
         totalDayscolumn.setCellValueFactory(new PropertyValueFactory<>("totalDays"));
         toPayColumn.setCellValueFactory(new PropertyValueFactory<>("toPay"));
     }
-
-//    private void getGuesstDetails() {
-//        guestAccountsList.clear();
-//        DbConnect connection = new DbConnect();
-//        try {
-//            String query = "SELECT * FROM RESERVATIONS";
-//            ResultSet rs = connection.fetch(query);
-//            while (rs.next()) {
-//                guestAccountsList.add(new GuestAccount(rs.getString("ID"), rs.getString("FIRSTNAME"),
-//                        rs.getString("LASTNAME"), rs.getString("ADDRESS"),
-//                        rs.getString("PHONENUMBER"), rs.getString("CREDITCARDNUMBER"),
-//                        rs.getString("PASSPORTNUMBER"), rs.getDate("CHECKINDATE"),
-//                        rs.getDate("CHECKOUTDATE"), rs.getInt("TOTALDAYS")));
-//            }
-//            reservationsTableView.setItems(list);
-//        } catch (Exception ex) {
-//            System.err.println(ex);
-//        } finally {
-//            connection.closeConnection();
-//        }
-//    }
 
     //    @FXML
 //    private void handleBookDeleteOption(ActionEvent event) {
@@ -221,6 +198,7 @@ public class GuestAccountController implements Initializable {
         DbConnect connection = new DbConnect();
         ArrayList parameters = new ArrayList();
         parameters.add(passportNumberTextField.getText());
+        System.out.println(passportNumberTextField.getText());
         try {
             String query = "SELECT * FROM GUESTS WHERE PASSPORTNUMBER=?";
             ResultSet rs = connection.executeWithParameters(query, parameters);
@@ -230,6 +208,7 @@ public class GuestAccountController implements Initializable {
                         rs.getString("ADDRESS"), rs.getString("PHONENUMBER"),
                         rs.getString("CREDITCARDNUMBER"), rs.getString("PASSPORTNUMBER")));
             }
+            System.out.println(guestAccountsList.size());
             firstNameTextField.setText(guestAccountsList.get(0).getFirstName());
             lastNameTextField.setText(guestAccountsList.get(0).getLastName());
             addressTextField.setText(guestAccountsList.get(0).getAddress());
