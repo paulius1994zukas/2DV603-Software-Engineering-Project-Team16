@@ -34,7 +34,7 @@
                   <RowConstraints maxHeight="1.7976931348623157E308" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <JFXTextField id="passportNumberTextField" fx:id="passportNumberTextField" promptText="Passport Number" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <JFXTextField id="passportNumberTextField" fx:id="passportNumberTextField" layoutX="35.0" layoutY="167.0" promptText="Passport Number" GridPane.rowIndex="1" />
                   <JFXButton id="searchBtn" fx:id="searchBtn" onAction="#onSearchBtnClick" text="Search" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
                   <JFXTextField id="firstNameTextField" fx:id="firstNameTextField" promptText="First Name" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
                   <JFXTextField id="lastNameTextField" fx:id="lastNameTextField" promptText="Last Name" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
@@ -58,13 +58,14 @@
                      <contextMenu>
                         <ContextMenu styleClass="table-context">
                            <items>
-                              <MenuItem mnemonicParsing="false" text="Refresh" />
+                              <MenuItem mnemonicParsing="false" onAction="#handleRefresh" text="Refresh" />
                               <MenuItem mnemonicParsing="false" text="Check In" />
                               <MenuItem mnemonicParsing="false" text="Check Out" />
                               <MenuItem mnemonicParsing="false" text="Edit" />
                               <MenuItem mnemonicParsing="false" text="Delete" />
                               <MenuItem mnemonicParsing="false" text="Room Information" />
                               <MenuItem mnemonicParsing="false" text="Add a Fee" />
+                              <MenuItem mnemonicParsing="false" text="Print Bill" />
                            </items>
                         </ContextMenu>
                      </contextMenu>

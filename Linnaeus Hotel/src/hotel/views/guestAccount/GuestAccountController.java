@@ -12,9 +12,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import hotel.database.DbConnect;
+import hotel.helpers.AlertMaker;
 import hotel.helpers.HotelHelper;
 import hotel.models.GuestAccount;
 import hotel.models.Reservation;
+import hotel.views.availableRoomSearch.AvailableRoomSearchController;
 import hotel.views.main.MainController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -85,9 +87,9 @@ public class GuestAccountController implements Initializable {
     @FXML
     private JFXTextField createPassportNumberTxtField;
     @FXML
-    private JFXButton createSubmitBtn;
-    @FXML
     private JFXButton createCancelBtn;
+
+    private AlertMaker alert = new AlertMaker();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -166,7 +168,7 @@ public class GuestAccountController implements Initializable {
 
     @FXML
     private void handleRefresh(ActionEvent event) {
-
+        System.out.println("REFRESH!");
     }
 
 //    @FXML
@@ -194,11 +196,9 @@ public class GuestAccountController implements Initializable {
 
     private void getGuestDetails() {
         guestAccountsList.clear();
-        clearSearchFields();
         DbConnect connection = new DbConnect();
         ArrayList parameters = new ArrayList();
         parameters.add(passportNumberTextField.getText());
-        System.out.println(passportNumberTextField.getText());
         try {
             String query = "SELECT * FROM GUESTS WHERE PASSPORTNUMBER=?";
             ResultSet rs = connection.executeWithParameters(query, parameters);
@@ -208,7 +208,6 @@ public class GuestAccountController implements Initializable {
                         rs.getString("ADDRESS"), rs.getString("PHONENUMBER"),
                         rs.getString("CREDITCARDNUMBER"), rs.getString("PASSPORTNUMBER")));
             }
-            System.out.println(guestAccountsList.size());
             firstNameTextField.setText(guestAccountsList.get(0).getFirstName());
             lastNameTextField.setText(guestAccountsList.get(0).getLastName());
             addressTextField.setText(guestAccountsList.get(0).getAddress());
@@ -216,6 +215,7 @@ public class GuestAccountController implements Initializable {
             creditCardNumberTextField.setText(guestAccountsList.get(0).getCreditCardNumber());
         } catch (Exception ex) {
             System.err.println(ex);
+            alert.showErrorMessage(ex);
         } finally {
             connection.closeConnection();
         }
@@ -239,6 +239,7 @@ public class GuestAccountController implements Initializable {
             reservationsTableView.setItems(reservationsList);
         } catch (Exception ex) {
             System.err.println(ex);
+            alert.showErrorMessage(ex);
         } finally {
             connection.closeConnection();
         }
@@ -268,8 +269,12 @@ public class GuestAccountController implements Initializable {
             ResultSet rs = connection.executeWithParameters(query, parameters);
         } catch (Exception ex) {
             System.err.println(ex);
+            alert.showErrorMessage(ex);
         } finally {
             connection.closeConnection();
+            alert.showSimpleAlert("Guest account was created!",
+                    String.format("User account for %s %s was successfully created!",
+                            createFirstNameTxtField.getText(), createLastNameTxtField.getText()));
         }
         clearCreateFields();
     }
@@ -289,11 +294,11 @@ public class GuestAccountController implements Initializable {
         createPassportNumberTxtField.clear();
     }
 
-    private void getCheckingInTodayCount(){
+    private void getCheckingInTodayCount() {
 
     }
 
-    private void getCheckingOutTodayCount(){
+    private void getCheckingOutTodayCount() {
 
     }
 }

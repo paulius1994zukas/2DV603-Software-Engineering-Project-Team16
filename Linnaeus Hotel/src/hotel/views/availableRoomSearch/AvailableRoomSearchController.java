@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import hotel.database.DbConnect;
 import hotel.helpers.AlertMaker;
+import hotel.helpers.HotelHelper;
 import hotel.models.Room;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -135,7 +136,7 @@ public class AvailableRoomSearchController implements Initializable {
     private void onSearchBtnClick(ActionEvent event) {
         if ((checkInDatePicker.getValue() == null) || (checkOutDatePicker.getValue() == null)) {
             AlertMaker alert = new AlertMaker();
-            alert.showSimpleAlert("Oops! Forgot something?","You have left " +
+            alert.showSimpleAlert("Oops! Forgot something?", "You have left " +
                     "check in or check out date fields empty. Please choose two dates before " +
                     "proceeding to Search.");
         } else {
@@ -179,12 +180,13 @@ public class AvailableRoomSearchController implements Initializable {
 
     @FXML
     private void onReserveRoomCntxtBtnClick(ActionEvent event) {
-        //Fetch the selected row
         Room selectedRoom = availableRoomsTableView.getSelectionModel().getSelectedItem();
         if (selectedRoom == null) {
             AlertMaker.showErrorMessage("No room selected", "Please select a room to be reserved.");
             return;
         }
+        HotelHelper.loadWindow(getClass().getResource("/hotel/views/guestAccount/guestAccount.fxml"),
+                "Guest Account", null, false);
     }
 
     @FXML
