@@ -6,7 +6,9 @@ import com.jfoenix.controls.JFXDatePicker;
 import hotel.database.DbConnect;
 import hotel.helpers.AlertMaker;
 import hotel.helpers.HotelHelper;
+import hotel.models.GuestAccount;
 import hotel.models.Room;
+import hotel.views.guestAccount.GuestAccountController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -55,6 +57,7 @@ public class AvailableRoomSearchController implements Initializable {
     private TableColumn<Room, String> priceRatecolumn;
 
     private String location;
+    private Room room = new Room();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -185,6 +188,7 @@ public class AvailableRoomSearchController implements Initializable {
             AlertMaker.showErrorMessage("No room selected", "Please select a room to be reserved.");
             return;
         }
+        room.setRoom(selectedRoom);
         HotelHelper.loadWindow(getClass().getResource("/hotel/views/guestAccount/guestAccount.fxml"),
                 "Guest Account", null, false);
     }

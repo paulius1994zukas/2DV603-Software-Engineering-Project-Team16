@@ -16,6 +16,7 @@ import hotel.helpers.AlertMaker;
 import hotel.helpers.HotelHelper;
 import hotel.models.GuestAccount;
 import hotel.models.Reservation;
+import hotel.models.Room;
 import hotel.views.availableRoomSearch.AvailableRoomSearchController;
 import hotel.views.main.MainController;
 import javafx.collections.FXCollections;
@@ -29,6 +30,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -61,6 +64,20 @@ public class GuestAccountController implements Initializable {
     @FXML
     private TableColumn<Reservation, String> toPayColumn;
     @FXML
+    private TableView<Room> availableRoomsTableView;
+    @FXML
+    private TableColumn<Room, String> roomcolumn;
+    @FXML
+    private TableColumn<Room, String> qualitycolumn;
+    @FXML
+    private TableColumn<Room, String> bedscolumn;
+    @FXML
+    private TableColumn<Room, String> smokingcolumn;
+    @FXML
+    private TableColumn<Room, String> adjoiningcolumn;
+    @FXML
+    private TableColumn<Room, String> priceRatecolumn;
+    @FXML
     private JFXTextField passportNumberTextField;
     @FXML
     private JFXButton searchBtn;
@@ -88,6 +105,12 @@ public class GuestAccountController implements Initializable {
     private JFXTextField createPassportNumberTxtField;
     @FXML
     private JFXButton createCancelBtn;
+    @FXML
+    private VBox currenctlyBookingVBox;
+    @FXML
+    private GridPane mainGridPane;
+
+    private Room room = new Room();
 
     private AlertMaker alert = new AlertMaker();
 
@@ -96,6 +119,20 @@ public class GuestAccountController implements Initializable {
         clearCreateFields();
         clearSearchFields();
         initCol();
+        if (Room.getRoom() != null) {
+            onRoomReservation();
+        } else
+            currenctlyBookingVBox.setManaged(false);
+    }
+
+    private void onRoomReservation() {
+        currenctlyBookingVBox.setVisible(true);
+        currenctlyBookingVBox.setManaged(true);
+        room = Room.getRoom();
+        ObservableList<Room> roomsList = FXCollections.observableArrayList();
+        roomsList.add(room);
+        System.out.println(roomsList.size());
+        availableRoomsTableView.setItems(roomsList);
     }
 
     private void initCol() {
@@ -110,36 +147,14 @@ public class GuestAccountController implements Initializable {
         checkOutDatecolumn.setCellValueFactory(new PropertyValueFactory<>("checkOutDate"));
         totalDayscolumn.setCellValueFactory(new PropertyValueFactory<>("totalDays"));
         toPayColumn.setCellValueFactory(new PropertyValueFactory<>("toPay"));
-    }
 
-    //    @FXML
-//    private void handleBookDeleteOption(ActionEvent event) {
-//        //Fetch the selected row
-//        Book selectedForDeletion = tableView.getSelectionModel().getSelectedItem();
-//        if (selectedForDeletion == null) {
-////            AlertMaker.showErrorMessage("No book selected", "Please select a book for deletion.");
-//            return;
-//        }
-////        if (DatabaseHandler.getInstance().isBookAlreadyIssued(selectedForDeletion)) {
-//////            AlertMaker.showErrorMessage("Cant be deleted", "This book is already issued and cant be deleted.");
-////            return;
-////        }
-//        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-//        alert.setTitle("Deleting book");
-//        alert.setContentText("Are you sure want to delete the book " + selectedForDeletion.getTitle() + " ?");
-//        Optional<ButtonType> answer = alert.showAndWait();
-//        if (answer.get() == ButtonType.OK) {
-//            Boolean result = DatabaseHandler.getInstance().deleteBook(selectedForDeletion);
-//            if (result) {
-////                AlertMaker.showSimpleAlert("Book deleted", selectedForDeletion.getTitle() + " was deleted successfully.");
-//                list.remove(selectedForDeletion);
-//            } else {
-////                AlertMaker.showSimpleAlert("Failed", selectedForDeletion.getTitle() + " could not be deleted");
-//            }
-//        } else {
-////            AlertMaker.showSimpleAlert("Deletion cancelled", "Deletion process cancelled");
-//        }
-//    }
+        roomcolumn.setCellValueFactory(new PropertyValueFactory<>("roomID"));
+        qualitycolumn.setCellValueFactory(new PropertyValueFactory<>("quality"));
+        bedscolumn.setCellValueFactory(new PropertyValueFactory<>("bedNumber"));
+        smokingcolumn.setCellValueFactory(new PropertyValueFactory<>("smoking"));
+        adjoiningcolumn.setCellValueFactory(new PropertyValueFactory<>("adjoining"));
+        priceRatecolumn.setCellValueFactory(new PropertyValueFactory<>("maxRate"));
+    }
 
     @FXML
     private void onReservationEditClick(ActionEvent event) {

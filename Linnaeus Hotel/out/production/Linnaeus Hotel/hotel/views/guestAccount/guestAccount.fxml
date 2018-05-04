@@ -12,13 +12,14 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
 <JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.views.guestAccount.GuestAccountController">
    <tabs>
       <Tab text="Find Existing">
         <content>
-            <GridPane hgap="20.0" vgap="20.0">
+            <GridPane id="mainGridPane" fx:id="mainGridPane" hgap="20.0" vgap="10.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" />
                   <ColumnConstraints hgrow="SOMETIMES" />
@@ -31,9 +32,29 @@
                   <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="1.7976931348623157E308" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="1.7976931348623157E308" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="1.7976931348623157E308" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
+                  <VBox fx:id="currenctlyBookingVBox" alignment="CENTER_LEFT" spacing="10.0" style="-fx-border-color: Black; -fx-background-color: #FADA5E; -fx-padding: 10;" visible="false" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="8" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Currently booking room: " />
+                        <TableView id="availableRoomsTableView" fx:id="availableRoomsTableView">
+                           <columns>
+                              <TableColumn id="roomcolumn" fx:id="roomcolumn" maxWidth="-1.0" minWidth="85.0" prefWidth="-1.0" text="Room" />
+                              <TableColumn id="qualitycolumn" fx:id="qualitycolumn" maxWidth="-1.0" minWidth="75.0" prefWidth="-1.0" text="Quality" />
+                              <TableColumn id="bedscolumn" fx:id="bedscolumn" maxWidth="-1.0" minWidth="75.0" prefWidth="-1.0" text="Beds" />
+                              <TableColumn id="smokingcolumn" fx:id="smokingcolumn" maxWidth="-1.0" minWidth="75.0" prefWidth="-1.0" text="Smoking" />
+                              <TableColumn id="adjoiningcolumn" fx:id="adjoiningcolumn" maxWidth="-1.0" minWidth="120.0" prefWidth="-1.0" text="Adjoining Room" />
+                              <TableColumn id="priceRatecolumn" fx:id="priceRatecolumn" maxWidth="-1.0" minWidth="100.0" prefWidth="-1.0" text="Price Rate" />
+                           </columns>
+                        </TableView>
+                        <JFXButton id="searchBtn" fx:id="searchBtn1" alignment="CENTER" contentDisplay="CENTER" onAction="#onSearchBtnClick" text="Book Room!" />
+                     </children>
+                  </VBox>
                   <JFXTextField id="passportNumberTextField" fx:id="passportNumberTextField" layoutX="35.0" layoutY="167.0" promptText="Passport Number" GridPane.rowIndex="1" />
                   <JFXButton id="searchBtn" fx:id="searchBtn" onAction="#onSearchBtnClick" text="Search" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
                   <JFXTextField id="firstNameTextField" fx:id="firstNameTextField" promptText="First Name" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
@@ -41,7 +62,7 @@
                   <JFXTextField id="addressTextField" fx:id="addressTextField" promptText="Address" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
                   <JFXTextField id="phoneNumberTextField" fx:id="phoneNumberTextField" promptText="Phone Number" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
                   <JFXTextField id="creditCardNumberTextField" fx:id="creditCardNumberTextField" promptText="Credit Card Number" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                  <TableView id="reservationsTableView" fx:id="reservationsTableView" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <TableView id="reservationsTableView" fx:id="reservationsTableView" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                     <columns>
                         <TableColumn id="idcolumn" fx:id="idcolumn" maxWidth="30.0" minWidth="-Infinity" prefWidth="30.0" text="ID" />
                         <TableColumn id="firstNamecolumn" fx:id="firstNamecolumn" maxWidth="90.0" minWidth="-1.0" prefWidth="90.0" text="First Name" />
@@ -71,7 +92,8 @@
                      </contextMenu>
                   </TableView>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Search by guests passport number: " GridPane.columnSpan="2" />
-                  <Text layoutX="30.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guests information and current reservations: " GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                  <Text layoutX="30.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guest details: " GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                  <Text layoutX="35.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current standing reservations: " GridPane.columnSpan="2" GridPane.rowIndex="6" />
                </children>
                <padding>
                   <Insets bottom="40.0" left="25.0" right="10.0" top="40.0" />

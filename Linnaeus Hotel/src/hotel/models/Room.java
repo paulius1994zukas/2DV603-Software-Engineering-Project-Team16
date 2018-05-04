@@ -11,6 +11,7 @@ public class Room {
     private String adjoining;
     private int maxRate;
     private static String location;
+    private static Room room;
 
     public Room(){
 
@@ -79,5 +80,13 @@ public class Room {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public static Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
     }
 }
