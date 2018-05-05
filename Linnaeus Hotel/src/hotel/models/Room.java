@@ -1,6 +1,6 @@
 package hotel.models;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Room {
 
@@ -12,8 +12,10 @@ public class Room {
     private int maxRate;
     private static String location;
     private static Room room;
+    private static LocalDate checkInDate;
+    private static LocalDate checkOutDate;
 
-    public Room(){
+    public Room() {
 
     }
 
@@ -88,5 +90,21 @@ public class Room {
 
     public void setRoom(Room room) {
         this.room = room;
+    }
+
+    public static LocalDate getCheckInDate() {
+        return checkInDate;
+    }
+
+    public void setCheckInDate(LocalDate checkInDate) {
+        this.checkInDate = checkInDate;
+    }
+
+    public static LocalDate getCheckOutDate() {
+        return checkOutDate;
+    }
+
+    public void setCheckOutDate(LocalDate checkOutDate) {
+        this.checkOutDate = checkOutDate;
     }
 }

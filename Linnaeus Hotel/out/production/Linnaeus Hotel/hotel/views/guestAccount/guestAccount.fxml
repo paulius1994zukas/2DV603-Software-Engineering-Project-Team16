@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
@@ -55,6 +56,7 @@
                         <TableColumn id="firstNamecolumn" fx:id="firstNamecolumn" maxWidth="90.0" minWidth="-1.0" prefWidth="90.0" text="First Name" />
                         <TableColumn id="lastNamecolumn" fx:id="lastNamecolumn" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" text="Last Name" />
                         <TableColumn id="addresscolumn" fx:id="addresscolumn" maxWidth="190.0" minWidth="190.0" prefWidth="190.0" text="Address" />
+                        <TableColumn id="sexColumn" fx:id="sexColumn" maxWidth="-1.0" minWidth="70.0" prefWidth="-1.0" text="Sex" />
                         <TableColumn id="phoneNumbercolumn" fx:id="phoneNumbercolumn" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" text="Phone Number" />
                         <TableColumn id="creditCardNumbercolumn" fx:id="creditCardNumbercolumn" maxWidth="140.0" minWidth="140.0" prefWidth="140.0" text="Credit Card Number" />
                         <TableColumn id="passportNumbercolumn" fx:id="passportNumbercolumn" maxWidth="130.0" minWidth="130.0" prefWidth="130.0" text="Passport Number" />
@@ -69,7 +71,8 @@
                            <items>
                               <MenuItem id="checkInCntxtBtn" fx:id="checkInCntxtBtn" mnemonicParsing="false" onAction="#onCheckInCntxtBtnClick" text="Check In" />
                               <MenuItem id="checkOutCntxtBtn" fx:id="checkOutCntxtBtn" mnemonicParsing="false" onAction="#onCheckOutCntxtBtnClick" text="Check Out" />
-                              <MenuItem id="deleteCntxtBtn" fx:id="deleteCntxtBtn" mnemonicParsing="false" onAction="#onDeleteCntxtBtnClick" text="Delete" />
+                              <MenuItem id="addCntxtBtn" fx:id="addCntxtBtn" mnemonicParsing="false" onAction="#onAddCntxtBtnClick" text="Add Reservation" />
+                              <MenuItem id="deleteCntxtBtn" fx:id="deleteCntxtBtn" mnemonicParsing="false" onAction="#onDeleteCntxtBtnClick" text="Delete Reservation" />
                               <MenuItem id="manageFeesCntxtBtn" fx:id="manageFeesCntxtBtn" mnemonicParsing="false" onAction="#onManageFeesCntxtBtnClick" text="Manage Fees" />
                               <MenuItem id="printBillCntxtBtn" fx:id="printBillCntxtBtn" mnemonicParsing="false" onAction="#onPrintBillCntxtBtnClick" text="Print Bill" />
                            </items>
@@ -89,9 +92,10 @@
                               <TableColumn id="priceRatecolumn" fx:id="priceRatecolumn" maxWidth="-1.0" minWidth="100.0" prefWidth="-1.0" text="Price Rate" />
                            </columns>
                         </TableView>
-                        <JFXButton id="searchBtn" fx:id="searchBtn1" alignment="CENTER" contentDisplay="CENTER" onAction="#onSearchBtnClick" text="Book Room!" />
+                        <JFXButton id="bookRoomBtn" fx:id="bookRoomBtn" alignment="CENTER" contentDisplay="CENTER" onAction="#onBookRoomBtnClick" text="Book Room!" />
                      </children>
                   </VBox>
+                  <JFXComboBox id="sexCmbBox" fx:id="sexCmbBox" promptText="Sex" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                </children>
                <padding>
                   <Insets bottom="40.0" left="25.0" right="10.0" top="40.0" />

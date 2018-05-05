@@ -12,9 +12,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 
 import java.net.URL;
 import java.sql.ResultSet;
@@ -39,6 +41,8 @@ public class AddAFeeController implements Initializable {
     private JFXTextField descriptionTxtField;
     @FXML
     private JFXButton addBtn;
+    @FXML
+    private Text totalFeesLbl;
 
     private Room room = new Room();
 
@@ -85,14 +89,17 @@ public class AddAFeeController implements Initializable {
         DbConnect connection = new DbConnect();
         ArrayList parameters = new ArrayList();
         parameters.add(reservation.getReservation().getId());
+        int totalFee = 0;
         try {
             String query = "SELECT * FROM FEES WHERE RESERVATIONID=?";
             ResultSet rs = connection.executeWithParameters(query, parameters);
             while (rs.next()) {
                 feesList.add(new Fee(rs.getInt("ID"), rs.getInt("RESERVATIONID"),
                         rs.getInt("FEE"), rs.getString("DESCRIPTION")));
+                totalFee += rs.getInt("FEE");
             }
             feesTableView.setItems(feesList);
+            totalFeesLbl.setText(String.format("Total fees: %s", totalFee));
         } catch (Exception ex) {
             System.err.println(ex);
             alert.showErrorMessage(ex);

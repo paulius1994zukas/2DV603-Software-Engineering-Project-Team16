@@ -8,25 +8,25 @@
 
 <GridPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.views.reservations.ReservationsListController">
    <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+      <ColumnConstraints hgrow="SOMETIMES" />
    </columnConstraints>
    <rowConstraints>
-      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
       <TableView id="reservationsTableView" fx:id="reservationsTableView" prefHeight="400.0" prefWidth="853.0">
         <columns>
-          <TableColumn id="idColumn" fx:id="idColumn" maxWidth="1000.0" text="ID" />
-          <TableColumn id="firstNameColumn" fx:id="firstNameColumn" prefWidth="92.0" text="First Name" />
-            <TableColumn id="lastNameColumn" fx:id="lastNameColumn" prefWidth="96.0" text="Last Name" />
-            <TableColumn id="addressColumn" fx:id="addressColumn" prefWidth="85.0" text="Address" />
-            <TableColumn id="phoneNumberColumn" fx:id="phoneNumberColumn" prefWidth="85.0" text="Phone Number" />
+          <TableColumn id="idColumn" fx:id="idColumn" maxWidth="1000.0" minWidth="20.0" text="ID" />
+          <TableColumn id="firstNameColumn" fx:id="firstNameColumn" minWidth="70.0" prefWidth="92.0" text="First Name" />
+            <TableColumn id="lastNameColumn" fx:id="lastNameColumn" minWidth="70.0" prefWidth="96.0" text="Last Name" />
+            <TableColumn id="addressColumn" fx:id="addressColumn" minWidth="200.0" prefWidth="85.0" text="Address" />
+            <TableColumn id="phoneNumberColumn" fx:id="phoneNumberColumn" minWidth="90.0" prefWidth="85.0" text="Phone Number" />
             <TableColumn id="creditCardNumberColumn" fx:id="creditCardNumberColumn" maxWidth="2800.0" minWidth="160.0" prefWidth="500.0" text="Credit Card Number" />
             <TableColumn id="passportNumberColumn" fx:id="passportNumberColumn" maxWidth="2800.0" minWidth="100.0" prefWidth="75.0" text="Passport Number" />
             <TableColumn id="checkInDateColumn" fx:id="checkInDateColumn" maxWidth="2800.0" minWidth="100.0" prefWidth="75.0" text="Check-In Date" />
             <TableColumn id="checkOutDateColumn" fx:id="checkOutDateColumn" maxWidth="2800.0" minWidth="100.0" prefWidth="75.0" text="Check-Out Date" />
-            <TableColumn id="totalDaysColumn" fx:id="totalDaysColumn" maxWidth="2800.0" minWidth="100.0" prefWidth="75.0" text="Total Days" />
-            <TableColumn id="checkedInColumn" fx:id="checkedInColumn" maxWidth="2800.0" minWidth="100.0" prefWidth="75.0" text="Checked In" />
+            <TableColumn id="totalDaysColumn" fx:id="totalDaysColumn" maxWidth="2800.0" minWidth="70.0" prefWidth="75.0" text="Total Days" />
+            <TableColumn id="checkedInColumn" fx:id="checkedInColumn" maxWidth="2800.0" minWidth="70.0" prefWidth="75.0" text="Checked In" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

@@ -1,6 +1,7 @@
 package hotel.views.guestAccount;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 
 import java.io.IOException;
@@ -37,6 +38,7 @@ import javafx.stage.StageStyle;
 public class GuestAccountController implements Initializable {
     ObservableList<GuestAccount> guestAccountsList = FXCollections.observableArrayList();
     ObservableList<Reservation> reservationsList = FXCollections.observableArrayList();
+    ObservableList<Room> roomsList = FXCollections.observableArrayList();
 
     private Reservation reservation = new Reservation();
 
@@ -50,6 +52,8 @@ public class GuestAccountController implements Initializable {
     private TableColumn<Reservation, String> lastNamecolumn;
     @FXML
     private TableColumn<Reservation, String> addresscolumn;
+    @FXML
+    private TableColumn<Reservation, String> sexColumn;
     @FXML
     private TableColumn<Reservation, String> phoneNumbercolumn;
     @FXML
@@ -108,9 +112,13 @@ public class GuestAccountController implements Initializable {
     @FXML
     private JFXTextField createPassportNumberTxtField;
     @FXML
+    private JFXComboBox createSexCmbBox;
+    @FXML
     private JFXButton createCancelBtn;
     @FXML
     private VBox currenctlyBookingVBox;
+    @FXML
+    private JFXComboBox sexCmbBox;
     @FXML
     private GridPane mainGridPane;
 
@@ -127,13 +135,21 @@ public class GuestAccountController implements Initializable {
             onRoomReservation();
         } else
             currenctlyBookingVBox.setManaged(false);
+        setSexCmbBox();
+    }
+
+    private void setSexCmbBox() {
+        ObservableList sex = FXCollections.observableArrayList();
+        sex.add("Male");
+        sex.add("Female");
+        sexCmbBox.setItems(sex);
+        createSexCmbBox.setItems(sex);
     }
 
     private void onRoomReservation() {
         currenctlyBookingVBox.setVisible(true);
         currenctlyBookingVBox.setManaged(true);
         room = Room.getRoom();
-        ObservableList<Room> roomsList = FXCollections.observableArrayList();
         roomsList.add(room);
         System.out.println(roomsList.size());
         availableRoomsTableView.setItems(roomsList);
@@ -144,6 +160,7 @@ public class GuestAccountController implements Initializable {
         firstNamecolumn.setCellValueFactory(new PropertyValueFactory<>("firstName"));
         lastNamecolumn.setCellValueFactory(new PropertyValueFactory<>("lastName"));
         addresscolumn.setCellValueFactory(new PropertyValueFactory<>("address"));
+        sexColumn.setCellValueFactory(new PropertyValueFactory<>("sex"));
         phoneNumbercolumn.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
         passportNumbercolumn.setCellValueFactory(new PropertyValueFactory<>("passportNumber"));
         creditCardNumbercolumn.setCellValueFactory(new PropertyValueFactory<>("creditCardNumber"));
@@ -195,6 +212,14 @@ public class GuestAccountController implements Initializable {
         } finally {
             connection.closeConnection();
         }
+    }
+
+    @FXML
+    private void onAddCntxtBtnClick(ActionEvent event) {
+        Stage stage = (Stage) createCancelBtn.getScene().getWindow();
+        stage.close();
+        HotelHelper.loadWindow(getClass().getResource("/hotel/views/availableRoomSearch/availableRoomSearch.fxml"),
+                "Available Rooms", null, false);
     }
 
     @FXML
@@ -266,11 +291,13 @@ public class GuestAccountController implements Initializable {
             while (rs.next()) {
                 guestAccountsList.add(new GuestAccount(rs.getString("ID"),
                         rs.getString("FIRSTNAME"), rs.getString("LASTNAME"),
-                        rs.getString("ADDRESS"), rs.getString("PHONENUMBER"),
-                        rs.getString("CREDITCARDNUMBER"), rs.getString("PASSPORTNUMBER")));
+                        rs.getString("ADDRESS"), rs.getString("SEX"),
+                        rs.getString("PHONENUMBER"), rs.getString("CREDITCARDNUMBER"),
+                        rs.getString("PASSPORTNUMBER")));
             }
             firstNameTextField.setText(guestAccountsList.get(0).getFirstName());
             lastNameTextField.setText(guestAccountsList.get(0).getLastName());
+            sexCmbBox.getSelectionModel().select(guestAccountsList.get(0).getSex());
             addressTextField.setText(guestAccountsList.get(0).getAddress());
             phoneNumberTextField.setText(guestAccountsList.get(0).getPhoneNumber());
             creditCardNumberTextField.setText(guestAccountsList.get(0).getCreditCardNumber());
@@ -307,15 +334,6 @@ public class GuestAccountController implements Initializable {
         }
     }
 
-    private void clearSearchFields() {
-        passportNumberTextField.clear();
-        firstNameTextField.clear();
-        lastNameTextField.clear();
-        addressTextField.clear();
-        phoneNumberTextField.clear();
-        creditCardNumberTextField.clear();
-    }
-
     @FXML
     private void onCreateSubmitBtnClick(ActionEvent event) {
         DbConnect connection = new DbConnect();
@@ -342,6 +360,44 @@ public class GuestAccountController implements Initializable {
     }
 
     @FXML
+    private void onBookRoomBtnClick(ActionEvent event) {
+        if (passportNumberTextField.getText().isEmpty() || firstNameTextField.getText().isEmpty() ||
+                lastNameTextField.getText().isEmpty() || addressTextField.getText().isEmpty() ||
+                phoneNumberTextField.getText().isEmpty() || creditCardNumberTextField.getText().isEmpty()) {
+            alert.showSimpleAlert("Oops, you have left something out!", "In order to add a " +
+                    "new reservation all the fields above must contain value. Please do not leave any fields blank!");
+        } else {
+            DbConnect connection = new DbConnect();
+            ArrayList parameters = new ArrayList();
+            parameters.add(firstNameTextField.getText());
+            parameters.add(lastNameTextField.getText());
+            parameters.add(addressTextField.getText());
+            parameters.add(phoneNumberTextField.getText());
+            parameters.add(creditCardNumberTextField.getText());
+            parameters.add(passportNumberTextField.getText());
+            parameters.add(roomsList.get(0).getRoomID());
+            parameters.add(Room.getCheckInDate());
+            parameters.add(Room.getCheckOutDate());
+            parameters.add(1);
+            //  parameters.add(Days.daysBetween(Room.getCheckInDate(), Room.getCheckOutDate()).getDays());
+            parameters.add("No");
+            try {
+                String query = "INSERT INTO RESERVATIONS(ID, FIRSTNAME, LASTNAME, ADDRESS, PHONENUMBER, CREDITCARDNUMBER, PASSPORTNUMBER, ROOMID, CHECKINDATE, CHECKOUTDATE, TOTALDAYS, CHECKEDIN) VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?)";
+                connection.executeWithParameters(query, parameters);
+            } catch (Exception ex) {
+                System.err.println(ex);
+                alert.showErrorMessage(ex);
+            } finally {
+                connection.closeConnection();
+                alert.showSimpleAlert("Guest account was created!",
+                        String.format("User account for %s %s was successfully created!",
+                                createFirstNameTxtField.getText(), createLastNameTxtField.getText()));
+            }
+            clearCreateFields();
+        }
+    }
+
+    @FXML
     private void onCreateCancelBtnClick(ActionEvent event) {
         Stage stage = (Stage) createCancelBtn.getScene().getWindow();
         stage.close();
@@ -354,5 +410,14 @@ public class GuestAccountController implements Initializable {
         createPhoneNumberTxtField.clear();
         createCreditCardNumberTxtField.clear();
         createPassportNumberTxtField.clear();
+    }
+
+    private void clearSearchFields() {
+        passportNumberTextField.clear();
+        firstNameTextField.clear();
+        lastNameTextField.clear();
+        addressTextField.clear();
+        phoneNumberTextField.clear();
+        creditCardNumberTextField.clear();
     }
 }

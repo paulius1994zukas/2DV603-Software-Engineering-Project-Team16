@@ -5,16 +5,18 @@ public class GuestAccount {
     private String id;
     private String firstName;
     private String lastName;
+    private String sex;
     private String address;
     private String phoneNumber;
     private String creditCardNumber;
     private String passportNumber;
 
-    public GuestAccount(String id, String firstName, String lastName, String address, String phoneNumber,
+    public GuestAccount(String id, String firstName, String lastName, String address, String sex, String phoneNumber,
                         String creditCardNumber, String passportNumber) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.sex = sex;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.creditCardNumber = creditCardNumber;
@@ -51,6 +53,14 @@ public class GuestAccount {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     public String getPhoneNumber() {

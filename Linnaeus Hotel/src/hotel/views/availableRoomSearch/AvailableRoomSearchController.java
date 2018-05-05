@@ -17,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.ResultSet;
@@ -26,6 +27,7 @@ import java.util.ResourceBundle;
 public class AvailableRoomSearchController implements Initializable {
 
     ObservableList<Room> roomsList = FXCollections.observableArrayList();
+    ObservableList qualityLevels = FXCollections.observableArrayList();
 
     @FXML
     private JFXDatePicker checkInDatePicker;
@@ -71,13 +73,19 @@ public class AvailableRoomSearchController implements Initializable {
     }
 
     private void setQualityLevels() {
-        ObservableList qualityLevels = FXCollections.observableArrayList();
-        qualityLevels.add("1");
-        qualityLevels.add("2");
-        qualityLevels.add("3");
-        qualityLevels.add("4");
-        qualityLevels.add("5");
-        qualityLevelCmbBox.setItems(qualityLevels);
+        DbConnect connection = new DbConnect();
+        try {
+            String query = "SELECT * FROM QUALITYLEVELS";
+            ResultSet rs = connection.execute(query);
+            while (rs.next()) {
+                qualityLevels.add(rs.getString(2));
+            }
+            qualityLevelCmbBox.setItems(qualityLevels);
+        } catch (Exception ex) {
+            System.err.println(ex);
+        } finally {
+            connection.closeConnection();
+        }
     }
 
     private void setBedCount() {
@@ -189,8 +197,12 @@ public class AvailableRoomSearchController implements Initializable {
             return;
         }
         room.setRoom(selectedRoom);
+        room.setCheckInDate(checkInDatePicker.getValue());
+        room.setCheckOutDate(checkOutDatePicker.getValue());
         HotelHelper.loadWindow(getClass().getResource("/hotel/views/guestAccount/guestAccount.fxml"),
                 "Guest Account", null, false);
+        Stage stage = (Stage) searchBtn.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
@@ -207,10 +219,5 @@ public class AvailableRoomSearchController implements Initializable {
 //            printData.add(row);
 //        }
 //        HotelHelper.initPDFExprot(rootPane, contentPane, getStage(), printData);
-    }
-
-    @FXML
-    private void closeStage(ActionEvent event) {
-//        getStage().close();
     }
 }
