@@ -16,6 +16,7 @@ public class Reservation {
     private Date checkOutDate;
     private int totalDays;
     private String checkedIn;
+    private static Reservation reservation;
 
     public Reservation(String id, String firstName, String lastName, String address, String phoneNumber,
                        String creditCardNumber, String passportNumber, Date checkInDate, Date checkOutDate,
@@ -31,6 +32,10 @@ public class Reservation {
         this.checkOutDate = checkOutDate;
         this.totalDays = totalDays;
         this.checkedIn = checkedIn;
+    }
+
+    public Reservation(){
+
     }
 
     public String getId() {
@@ -119,5 +124,13 @@ public class Reservation {
 
     public void setCheckedIn(String checkedIn) {
         this.checkedIn = checkedIn;
+    }
+
+    public static Reservation getReservation() {
+        return reservation;
+    }
+
+    public void setReservation(Reservation reservation) {
+        this.reservation = reservation;
     }
 }

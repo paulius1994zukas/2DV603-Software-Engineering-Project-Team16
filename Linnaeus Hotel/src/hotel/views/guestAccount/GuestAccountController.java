@@ -38,6 +38,8 @@ public class GuestAccountController implements Initializable {
     ObservableList<GuestAccount> guestAccountsList = FXCollections.observableArrayList();
     ObservableList<Reservation> reservationsList = FXCollections.observableArrayList();
 
+    private Reservation reservation = new Reservation();
+
     @FXML
     private TableView<Reservation> reservationsTableView;
     @FXML
@@ -218,7 +220,9 @@ public class GuestAccountController implements Initializable {
     }
 
     @FXML
-    private void onAddAFeeCntxtBtnClick(ActionEvent event) {
+    private void onManageFeesCntxtBtnClick(ActionEvent event) {
+        Reservation selectedReservation = reservationsTableView.getSelectionModel().getSelectedItem();
+        reservation.setReservation(selectedReservation);
         HotelHelper.loadWindow(getClass().getResource("/hotel/views/addAFee/addAFee.fxml"),
                 "Add a Fee", null, false);
     }
@@ -324,7 +328,7 @@ public class GuestAccountController implements Initializable {
         parameters.add(createPassportNumberTxtField.getText());
         try {
             String query = "INSERT INTO GUESTS(ID, FIRSTNAME, LASTNAME, ADDRESS, PHONENUMBER, CREDITCARDNUMBER, PASSPORTNUMBER) VALUES(NULL,?,?,?,?,?,?)";
-            ResultSet rs = connection.executeWithParameters(query, parameters);
+            connection.executeWithParameters(query, parameters);
         } catch (Exception ex) {
             System.err.println(ex);
             alert.showErrorMessage(ex);

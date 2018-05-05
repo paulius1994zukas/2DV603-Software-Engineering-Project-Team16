@@ -70,7 +70,7 @@
                               <MenuItem id="checkInCntxtBtn" fx:id="checkInCntxtBtn" mnemonicParsing="false" onAction="#onCheckInCntxtBtnClick" text="Check In" />
                               <MenuItem id="checkOutCntxtBtn" fx:id="checkOutCntxtBtn" mnemonicParsing="false" onAction="#onCheckOutCntxtBtnClick" text="Check Out" />
                               <MenuItem id="deleteCntxtBtn" fx:id="deleteCntxtBtn" mnemonicParsing="false" onAction="#onDeleteCntxtBtnClick" text="Delete" />
-                              <MenuItem id="addAFeeCntxtBtn" fx:id="addAFeeCntxtBtn" mnemonicParsing="false" onAction="#onAddAFeeCntxtBtnClick" text="Add a Fee" />
+                              <MenuItem id="manageFeesCntxtBtn" fx:id="manageFeesCntxtBtn" mnemonicParsing="false" onAction="#onManageFeesCntxtBtnClick" text="Manage Fees" />
                               <MenuItem id="printBillCntxtBtn" fx:id="printBillCntxtBtn" mnemonicParsing="false" onAction="#onPrintBillCntxtBtnClick" text="Print Bill" />
                            </items>
                         </ContextMenu>
