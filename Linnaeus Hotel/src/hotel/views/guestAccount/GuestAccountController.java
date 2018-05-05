@@ -17,7 +17,6 @@ import hotel.helpers.HotelHelper;
 import hotel.models.GuestAccount;
 import hotel.models.Reservation;
 import hotel.models.Room;
-import hotel.views.availableRoomSearch.AvailableRoomSearchController;
 import hotel.views.main.MainController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -63,6 +62,9 @@ public class GuestAccountController implements Initializable {
     private TableColumn<Reservation, Integer> totalDayscolumn;
     @FXML
     private TableColumn<Reservation, String> toPayColumn;
+    @FXML
+    private TableColumn<Reservation, String> checkedInCollumn;
+
     @FXML
     private TableView<Room> availableRoomsTableView;
     @FXML
@@ -147,6 +149,7 @@ public class GuestAccountController implements Initializable {
         checkOutDatecolumn.setCellValueFactory(new PropertyValueFactory<>("checkOutDate"));
         totalDayscolumn.setCellValueFactory(new PropertyValueFactory<>("totalDays"));
         toPayColumn.setCellValueFactory(new PropertyValueFactory<>("toPay"));
+        checkedInCollumn.setCellValueFactory(new PropertyValueFactory<>("checkedIn"));
 
         roomcolumn.setCellValueFactory(new PropertyValueFactory<>("roomID"));
         qualitycolumn.setCellValueFactory(new PropertyValueFactory<>("quality"));
@@ -157,33 +160,72 @@ public class GuestAccountController implements Initializable {
     }
 
     @FXML
-    private void onReservationEditClick(ActionEvent event) {
-        //Fetch the selected row
+    private void onCheckInCntxtBtnClick(ActionEvent event) {
+        checkInOut(true);
+    }
+
+    @FXML
+    private void onCheckOutCntxtBtnClick(ActionEvent event) {
+        checkInOut(false);
+    }
+
+    private void checkInOut(boolean yesOrNo) {
         Reservation selectedForEdit = reservationsTableView.getSelectionModel().getSelectedItem();
         if (selectedForEdit == null) {
-//            AlertMaker.showErrorMessage("No book selected", "Please select a book for edit.");
+            AlertMaker.showErrorMessage("No reservation selected", "Please select a reservation to be deleted.");
             return;
         }
+        DbConnect connection = new DbConnect();
+        ArrayList parameters = new ArrayList();
+        parameters.add(selectedForEdit.getId());
+        String query = "";
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/hotel/ui/addReservation/add_book.fxml"));
-            Parent parent = loader.load();
-            Stage stage = new Stage(StageStyle.DECORATED);
-            stage.setTitle("Edit Book");
-            stage.setScene(new Scene(parent));
-            stage.show();
-            HotelHelper.setStageIcon(stage);
-
-            stage.setOnCloseRequest((e) -> {
-                handleRefresh(new ActionEvent());
-            });
-        } catch (IOException ex) {
-            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+            if (yesOrNo) {
+                query = "UPDATE RESERVATIONS SET CHECKEDIN = 'Yes' WHERE ID = ?";
+            } else {
+                query = "UPDATE RESERVATIONS SET CHECKEDIN = 'No' WHERE ID = ?";
+            }
+            connection.executeWithParameters(query, parameters);
+            getReservations();
+        } catch (Exception ex) {
+            System.err.println(ex);
+            alert.showErrorMessage(ex);
+        } finally {
+            connection.closeConnection();
         }
     }
 
     @FXML
-    private void handleRefresh(ActionEvent event) {
-        System.out.println("REFRESH!");
+    private void onDeleteCntxtBtnClick(ActionEvent event) {
+        Reservation selectedForEdit = reservationsTableView.getSelectionModel().getSelectedItem();
+        if (selectedForEdit == null) {
+            AlertMaker.showErrorMessage("No reservation selected", "Please select a reservation to be deleted.");
+            return;
+        }
+        DbConnect connection = new DbConnect();
+        ArrayList parameters = new ArrayList();
+        parameters.add(selectedForEdit.getId());
+        try {
+            String query = "DELETE FROM RESERVATIONS WHERE ID=?";
+            connection.executeWithParameters(query, parameters);
+            getReservations();
+        } catch (Exception ex) {
+            System.err.println(ex);
+            alert.showErrorMessage(ex);
+        } finally {
+            connection.closeConnection();
+        }
+    }
+
+    @FXML
+    private void onAddAFeeCntxtBtnClick(ActionEvent event) {
+        HotelHelper.loadWindow(getClass().getResource("/hotel/views/addAFee/addAFee.fxml"),
+                "Add a Fee", null, false);
+    }
+
+    @FXML
+    private void onPrintBillCntxtBtnClick(ActionEvent event) {
+        System.out.println("PRINTING BILL!");
     }
 
 //    @FXML
@@ -249,7 +291,8 @@ public class GuestAccountController implements Initializable {
                         rs.getString("LASTNAME"), rs.getString("ADDRESS"),
                         rs.getString("PHONENUMBER"), rs.getString("CREDITCARDNUMBER"),
                         rs.getString("PASSPORTNUMBER"), rs.getDate("CHECKINDATE"),
-                        rs.getDate("CHECKOUTDATE"), rs.getInt("TOTALDAYS")));
+                        rs.getDate("CHECKOUTDATE"), rs.getInt("TOTALDAYS"),
+                        rs.getString("CHECKEDIN")));
             }
             reservationsTableView.setItems(reservationsList);
         } catch (Exception ex) {
@@ -307,13 +350,5 @@ public class GuestAccountController implements Initializable {
         createPhoneNumberTxtField.clear();
         createCreditCardNumberTxtField.clear();
         createPassportNumberTxtField.clear();
-    }
-
-    private void getCheckingInTodayCount() {
-
-    }
-
-    private void getCheckingOutTodayCount() {
-
     }
 }

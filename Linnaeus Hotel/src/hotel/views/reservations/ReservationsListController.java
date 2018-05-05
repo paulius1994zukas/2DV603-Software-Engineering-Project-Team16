@@ -42,6 +42,8 @@ public class ReservationsListController implements Initializable {
     private TableColumn<Reservation, String> checkOutDateColumn;
     @FXML
     private TableColumn<Reservation, Boolean> totalDaysColumn;
+    @FXML
+    private TableColumn<Reservation, Boolean> checkedInColumn;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -64,6 +66,7 @@ public class ReservationsListController implements Initializable {
         checkInDateColumn.setCellValueFactory(new PropertyValueFactory<>("checkInDate"));
         checkOutDateColumn.setCellValueFactory(new PropertyValueFactory<>("checkOutDate"));
         totalDaysColumn.setCellValueFactory(new PropertyValueFactory<>("totalDays"));
+        checkedInColumn.setCellValueFactory(new PropertyValueFactory<>("checkedIn"));
     }
 
     private void loadData() {
@@ -77,7 +80,8 @@ public class ReservationsListController implements Initializable {
                         rs.getString("LASTNAME"), rs.getString("ADDRESS"),
                         rs.getString("PHONENUMBER"), rs.getString("CREDITCARDNUMBER"),
                         rs.getString("PASSPORTNUMBER"), rs.getDate("CHECKINDATE"),
-                        rs.getDate("CHECKOUTDATE"), rs.getInt("TOTALDAYS")));
+                        rs.getDate("CHECKOUTDATE"), rs.getInt("TOTALDAYS"),
+                        rs.getString("CHECKEDIN")));
             }
             reservationsTableView.setItems(list);
         } catch (Exception ex) {
