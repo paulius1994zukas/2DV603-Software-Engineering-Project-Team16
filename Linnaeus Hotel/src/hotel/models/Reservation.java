@@ -18,11 +18,12 @@ public class Reservation {
     private int totalDays;
     private int toPay;
     private String checkedIn;
+    private String location;
     private static Reservation reservation;
 
     public Reservation(String id, String firstName, String lastName, String address, String sex, String phoneNumber,
                        String creditCardNumber, String passportNumber, Date checkInDate, Date checkOutDate,
-                       int totalDays, int toPay, String checkedIn) {
+                       int totalDays, int toPay, String checkedIn, String location) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -36,6 +37,7 @@ public class Reservation {
         this.totalDays = totalDays;
         this.toPay = toPay;
         this.checkedIn = checkedIn;
+        this.location = location;
     }
 
     public Reservation(){
@@ -144,6 +146,14 @@ public class Reservation {
 
     public void setCheckedIn(String checkedIn) {
         this.checkedIn = checkedIn;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public static Reservation getReservation() {

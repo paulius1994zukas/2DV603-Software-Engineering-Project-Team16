@@ -276,16 +276,16 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Double Deluxe: " GridPane.rowIndex="5" />
-            <Label id="availableDoubleDeluxeLbl" fx:id="availableDoubleDeluxeLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label text="Single Deluxe: " GridPane.rowIndex="6" />
-            <Label id="availableSignleDeluxeLbl" fx:id="availableSignleDeluxeLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Label text="Twin Bed: " GridPane.rowIndex="7" />
-            <Label id="availableTwinBedLbl" fx:id="availableTwinBedLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Label text="Double: " GridPane.rowIndex="8" />
-            <Label id="availableDoubleLbl" fx:id="availableDoubleLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <Label text="Single: " GridPane.rowIndex="9" />
-            <Label id="availableSingleLbl" fx:id="availableSingleLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label text="Penthouse:" GridPane.rowIndex="5" />
+            <Label id="availablePenthouseLbl" fx:id="availablePenthouseLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Lake View: " GridPane.rowIndex="6" />
+            <Label id="availableLakeViewLbl" fx:id="availableLakeViewLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="Garden View: " GridPane.rowIndex="7" />
+            <Label id="availableGardenViewLbl" fx:id="availableGardenViewLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label text="Street View: " GridPane.rowIndex="8" />
+            <Label id="availableStreetViewLbl" fx:id="availableStreetViewLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label text="Basic: " GridPane.rowIndex="9" />
+            <Label id="availableBasicLbl" fx:id="availableBasicLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
             <Label text="Checking In/Out: " GridPane.columnIndex="3" GridPane.rowIndex="4">
                <font>
                   <Font size="18.0" />
@@ -295,7 +295,6 @@
             <Label id="checkingInTodayLbl" fx:id="checkingInTodayLbl" text="0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
             <Label text="Checking Out Today: " GridPane.columnIndex="3" GridPane.rowIndex="6" />
             <Label id="checkingOutTodayLbl" fx:id="checkingOutTodayLbl" text="0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-            <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="2" GridPane.rowSpan="10" />
          </children>
       </GridPane>
       <GridPane GridPane.columnIndex="2" GridPane.columnSpan="4" GridPane.rowIndex="10" GridPane.rowSpan="4">

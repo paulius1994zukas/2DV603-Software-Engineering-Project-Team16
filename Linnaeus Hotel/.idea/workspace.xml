@@ -29,87 +29,61 @@
       <file leaf-file-name="GuestAccountController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hotel/views/guestAccount/GuestAccountController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="389" column="23" lean-forward="false" selection-start-line="389" selection-start-column="23" selection-end-line="389" selection-end-column="23" />
+            <state relative-caret-position="951">
+              <caret line="319" column="5" lean-forward="false" selection-start-line="319" selection-start-column="5" selection-end-line="319" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6290#6291#0" expanded="true" />
-                <element signature="e#6322#6323#0" expanded="true" />
-                <element signature="e#6395#6396#0" expanded="true" />
-                <element signature="e#6428#6429#0" expanded="true" />
-                <element signature="e#9095#9096#0" expanded="true" />
-                <element signature="e#9147#9148#0" expanded="true" />
+                <element signature="e#6495#6496#0" expanded="true" />
+                <element signature="e#6527#6528#0" expanded="true" />
+                <element signature="e#6600#6601#0" expanded="true" />
+                <element signature="e#6633#6634#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReservationsListController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hotel/views/reservations/ReservationsListController.java">
+      <file leaf-file-name="ListToPDF.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hotel/helpers/ListToPDF.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="71" column="91" lean-forward="true" selection-start-line="71" selection-start-column="91" selection-end-line="71" selection-end-column="91" />
+            <state relative-caret-position="175">
+              <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GuestAccount.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hotel/models/GuestAccount.java">
+      <file leaf-file-name="HotelHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hotel/helpers/HotelHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="59" column="5" lean-forward="false" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+            <state relative-caret-position="53">
+              <caret line="65" column="14" lean-forward="true" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Room.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hotel/models/Room.java">
+      <file leaf-file-name="HelpController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hotel/views/help/HelpController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="200">
+              <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/hotel/views/main/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-326">
+              <caret line="247" column="43" lean-forward="true" selection-start-line="247" selection-start-column="43" selection-end-line="247" selection-end-column="43" />
               <folding>
-                <element signature="e#1898#1899#0" expanded="true" />
-                <element signature="e#1930#1931#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#5482#5483#0" expanded="true" />
+                <element signature="e#5546#5547#0" expanded="true" />
+                <element signature="e#5583#5584#0" expanded="true" />
+                <element signature="e#5631#5632#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Fee.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hotel/models/Fee.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-              <folding>
-                <element signature="e#405#406#0" expanded="true" />
-                <element signature="e#430#431#0" expanded="true" />
-                <element signature="e#463#464#0" expanded="true" />
-                <element signature="e#491#492#0" expanded="true" />
-                <element signature="e#528#529#0" expanded="true" />
-                <element signature="e#564#565#0" expanded="true" />
-                <element signature="e#619#620#0" expanded="true" />
-                <element signature="e#669#670#0" expanded="true" />
-                <element signature="e#696#697#0" expanded="true" />
-                <element signature="e#722#723#0" expanded="true" />
-                <element signature="e#757#758#0" expanded="true" />
-                <element signature="e#787#788#0" expanded="true" />
-                <element signature="e#825#826#0" expanded="true" />
-                <element signature="e#859#860#0" expanded="true" />
-                <element signature="e#913#914#0" expanded="true" />
-                <element signature="e#959#960#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddAFeeController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/hotel/views/addAFee/AddAFeeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="77" column="19" lean-forward="true" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -117,58 +91,19 @@
       <file leaf-file-name="AvailableRoomSearchController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hotel/views/availableRoomSearch/AvailableRoomSearchController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="193" column="33" lean-forward="false" selection-start-line="193" selection-start-column="21" selection-end-line="193" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="151">
+              <caret line="153" column="97" lean-forward="false" selection-start-line="153" selection-start-column="32" selection-end-line="153" selection-end-column="97" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Reservation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hotel/models/Reservation.java">
+      <file leaf-file-name="ReservationsListController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hotel/views/reservations/ReservationsListController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="137" column="27" lean-forward="true" selection-start-line="137" selection-start-column="27" selection-end-line="137" selection-end-column="27" />
-              <folding>
-                <element signature="e#2967#2968#0" expanded="true" />
-                <element signature="e#2999#3000#0" expanded="true" />
-                <element signature="e#3046#3047#0" expanded="true" />
-                <element signature="e#3088#3089#0" expanded="true" />
-                <element signature="e#3117#3118#0" expanded="true" />
-                <element signature="e#3145#3146#0" expanded="true" />
-                <element signature="e#3184#3185#0" expanded="true" />
-                <element signature="e#3218#3219#0" expanded="true" />
-                <element signature="e#3428#3429#0" expanded="true" />
-                <element signature="e#3462#3463#0" expanded="true" />
-                <element signature="e#3521#3522#0" expanded="true" />
-                <element signature="e#3567#3568#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hotel/views/main/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="81" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DbConnect.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hotel/database/DbConnect.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="86" column="22" lean-forward="false" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-26">
+              <caret line="92" column="33" lean-forward="false" selection-start-line="92" selection-start-column="33" selection-end-line="92" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -195,11 +130,12 @@
       <find>addRe</find>
       <find>managed</find>
       <find>onAdd</find>
-      <find>search</find>
       <find>alert</find>
       <find>sub</find>
       <find>||</find>
       <find>book</find>
+      <find>betwee</find>
+      <find>search</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -243,7 +179,6 @@
         <option value="$PROJECT_DIR$/src/hotel/data/wrapper/GuestAccount.java" />
         <option value="$PROJECT_DIR$/src/hotel/data/model/GuestAccount.java" />
         <option value="$PROJECT_DIR$/src/hotel/ui/reservations/ReservationsListController.java" />
-        <option value="$PROJECT_DIR$/src/hotel/helpers/ListToPDF.java" />
         <option value="$PROJECT_DIR$/src/hotel/views/guestAccount/guestAccount.fxml" />
         <option value="$PROJECT_DIR$/src/hotel/views/reservations/reservationsList.fxml" />
         <option value="$PROJECT_DIR$/src/hotel/views/help/help.fxml" />
@@ -258,17 +193,18 @@
         <option value="$PROJECT_DIR$/src/hotel/views/reservations/ReservationsListLoader.java" />
         <option value="$PROJECT_DIR$/src/hotel/helpers/AlertMaker.java" />
         <option value="$PROJECT_DIR$/src/hotel/database/DbConnect.java" />
-        <option value="$PROJECT_DIR$/src/hotel/views/main/MainController.java" />
         <option value="$PROJECT_DIR$/src/hotel/helpers/HotelHelper.java" />
         <option value="$PROJECT_DIR$/src/hotel/views/addAFee/guestAccount.fxml" />
         <option value="$PROJECT_DIR$/src/hotel/models/Fee.java" />
         <option value="$PROJECT_DIR$/src/hotel/models/Room.java" />
         <option value="$PROJECT_DIR$/src/hotel/models/GuestAccount.java" />
-        <option value="$PROJECT_DIR$/src/hotel/views/availableRoomSearch/AvailableRoomSearchController.java" />
-        <option value="$PROJECT_DIR$/src/hotel/models/Reservation.java" />
-        <option value="$PROJECT_DIR$/src/hotel/views/guestAccount/GuestAccountController.java" />
-        <option value="$PROJECT_DIR$/src/hotel/views/reservations/ReservationsListController.java" />
         <option value="$PROJECT_DIR$/src/hotel/views/addAFee/AddAFeeController.java" />
+        <option value="$PROJECT_DIR$/src/hotel/models/Reservation.java" />
+        <option value="$PROJECT_DIR$/src/hotel/views/reservations/ReservationsListController.java" />
+        <option value="$PROJECT_DIR$/src/hotel/views/availableRoomSearch/AvailableRoomSearchController.java" />
+        <option value="$PROJECT_DIR$/src/hotel/helpers/ListToPDF.java" />
+        <option value="$PROJECT_DIR$/src/hotel/views/guestAccount/GuestAccountController.java" />
+        <option value="$PROJECT_DIR$/src/hotel/views/main/MainController.java" />
       </list>
     </option>
   </component>
@@ -671,12 +607,12 @@
       <workItem from="1525335746367" duration="18450000" />
       <workItem from="1525452654453" duration="12384000" />
       <workItem from="1525515458150" duration="17141000" />
-      <workItem from="1525600314328" duration="7411000" />
+      <workItem from="1525600314328" duration="21859000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155966000" />
+    <option name="totallyTimeSpent" value="170414000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -767,13 +703,6 @@
     <entry file="file://$PROJECT_DIR$/src/hotel/alert/AlertMaker.java" />
     <entry file="file://$PROJECT_DIR$/src/hotel/helper/HotelHelper.java" />
     <entry file="file://$PROJECT_DIR$/src/hotel/ui/reservations/ReservationsListController.java" />
-    <entry file="file://$PROJECT_DIR$/src/hotel/helpers/ListToPDF.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="38" lean-forward="false" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hotel/views/help/help.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -924,13 +853,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hotel/database/DataHelper.java" />
     <entry file="file://$PROJECT_DIR$/src/hotel/database/DatabaseHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/hotel/views/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="29" column="34" lean-forward="false" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hotel/views/reservations/ReservationsListLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -942,13 +864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="49">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hotel/views/help/HelpController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -999,16 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hotel/helpers/HotelHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="35" column="97" lean-forward="false" selection-start-line="35" selection-start-column="97" selection-end-line="35" selection-end-column="97" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hotel/views/guestAccount/GuestAccountLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -1035,22 +940,22 @@
         <state relative-caret-position="375">
           <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
           <folding>
-            <element signature="e#405#406#0" expanded="true" />
-            <element signature="e#430#431#0" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#528#529#0" expanded="true" />
-            <element signature="e#564#565#0" expanded="true" />
-            <element signature="e#619#620#0" expanded="true" />
-            <element signature="e#669#670#0" expanded="true" />
-            <element signature="e#696#697#0" expanded="true" />
-            <element signature="e#722#723#0" expanded="true" />
-            <element signature="e#757#758#0" expanded="true" />
-            <element signature="e#787#788#0" expanded="true" />
-            <element signature="e#825#826#0" expanded="true" />
-            <element signature="e#859#860#0" expanded="true" />
-            <element signature="e#913#914#0" expanded="true" />
-            <element signature="e#959#960#0" expanded="true" />
+            <element signature="e#405#406#0" expanded="false" />
+            <element signature="e#430#431#0" expanded="false" />
+            <element signature="e#463#464#0" expanded="false" />
+            <element signature="e#491#492#0" expanded="false" />
+            <element signature="e#528#529#0" expanded="false" />
+            <element signature="e#564#565#0" expanded="false" />
+            <element signature="e#619#620#0" expanded="false" />
+            <element signature="e#669#670#0" expanded="false" />
+            <element signature="e#696#697#0" expanded="false" />
+            <element signature="e#722#723#0" expanded="false" />
+            <element signature="e#757#758#0" expanded="false" />
+            <element signature="e#787#788#0" expanded="false" />
+            <element signature="e#825#826#0" expanded="false" />
+            <element signature="e#859#860#0" expanded="false" />
+            <element signature="e#913#914#0" expanded="false" />
+            <element signature="e#959#960#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1060,8 +965,8 @@
         <state relative-caret-position="75">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
-            <element signature="e#1898#1899#0" expanded="true" />
-            <element signature="e#1930#1931#0" expanded="true" />
+            <element signature="e#1898#1899#0" expanded="false" />
+            <element signature="e#1930#1931#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1071,89 +976,121 @@
         <state relative-caret-position="153">
           <caret line="86" column="22" lean-forward="false" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="22" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hotel/views/main/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/hotel/views/addAFee/AddAFeeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="81" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="241">
+          <caret line="75" column="31" lean-forward="false" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hotel/models/Reservation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="137" column="27" lean-forward="true" selection-start-line="137" selection-start-column="27" selection-end-line="137" selection-end-column="27" />
+        <state relative-caret-position="249">
+          <caret line="150" column="29" lean-forward="false" selection-start-line="150" selection-start-column="29" selection-end-line="150" selection-end-column="29" />
           <folding>
-            <element signature="e#2967#2968#0" expanded="true" />
-            <element signature="e#2999#3000#0" expanded="true" />
-            <element signature="e#3046#3047#0" expanded="true" />
-            <element signature="e#3088#3089#0" expanded="true" />
-            <element signature="e#3117#3118#0" expanded="true" />
-            <element signature="e#3145#3146#0" expanded="true" />
-            <element signature="e#3184#3185#0" expanded="true" />
-            <element signature="e#3218#3219#0" expanded="true" />
-            <element signature="e#3428#3429#0" expanded="true" />
-            <element signature="e#3462#3463#0" expanded="true" />
-            <element signature="e#3521#3522#0" expanded="true" />
-            <element signature="e#3567#3568#0" expanded="true" />
+            <element signature="e#3047#3048#0" expanded="false" />
+            <element signature="e#3079#3080#0" expanded="false" />
+            <element signature="e#3126#3127#0" expanded="false" />
+            <element signature="e#3168#3169#0" expanded="false" />
+            <element signature="e#3197#3198#0" expanded="false" />
+            <element signature="e#3225#3226#0" expanded="false" />
+            <element signature="e#3264#3265#0" expanded="false" />
+            <element signature="e#3298#3299#0" expanded="false" />
+            <element signature="e#3662#3663#0" expanded="false" />
+            <element signature="e#3696#3697#0" expanded="false" />
+            <element signature="e#3755#3756#0" expanded="false" />
+            <element signature="e#3801#3802#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hotel/models/GuestAccount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="59" column="5" lean-forward="false" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+        <state relative-caret-position="50">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hotel/views/help/HelpController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hotel/views/reservations/ReservationsListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26">
+          <caret line="92" column="33" lean-forward="false" selection-start-line="92" selection-start-column="33" selection-end-line="92" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hotel/helpers/HotelHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="65" column="14" lean-forward="true" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hotel/helpers/ListToPDF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hotel/views/availableRoomSearch/AvailableRoomSearchController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="193" column="33" lean-forward="false" selection-start-line="193" selection-start-column="21" selection-end-line="193" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="151">
+          <caret line="153" column="97" lean-forward="false" selection-start-line="153" selection-start-column="32" selection-end-line="153" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hotel/views/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hotel/views/guestAccount/GuestAccountController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="389" column="23" lean-forward="false" selection-start-line="389" selection-start-column="23" selection-end-line="389" selection-end-column="23" />
+        <state relative-caret-position="951">
+          <caret line="319" column="5" lean-forward="false" selection-start-line="319" selection-start-column="5" selection-end-line="319" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6290#6291#0" expanded="true" />
-            <element signature="e#6322#6323#0" expanded="true" />
-            <element signature="e#6395#6396#0" expanded="true" />
-            <element signature="e#6428#6429#0" expanded="true" />
-            <element signature="e#9095#9096#0" expanded="true" />
-            <element signature="e#9147#9148#0" expanded="true" />
+            <element signature="e#6495#6496#0" expanded="true" />
+            <element signature="e#6527#6528#0" expanded="true" />
+            <element signature="e#6600#6601#0" expanded="true" />
+            <element signature="e#6633#6634#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hotel/views/reservations/ReservationsListController.java">
+    <entry file="file://$PROJECT_DIR$/src/hotel/views/main/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="71" column="91" lean-forward="true" selection-start-line="71" selection-start-column="91" selection-end-line="71" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hotel/views/addAFee/AddAFeeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="77" column="19" lean-forward="true" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
-          <folding />
+        <state relative-caret-position="-326">
+          <caret line="247" column="43" lean-forward="true" selection-start-line="247" selection-start-column="43" selection-end-line="247" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5482#5483#0" expanded="true" />
+            <element signature="e#5546#5547#0" expanded="true" />
+            <element signature="e#5583#5584#0" expanded="true" />
+            <element signature="e#5631#5632#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

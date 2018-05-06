@@ -6,9 +6,7 @@ import com.jfoenix.controls.JFXDatePicker;
 import hotel.database.DbConnect;
 import hotel.helpers.AlertMaker;
 import hotel.helpers.HotelHelper;
-import hotel.models.GuestAccount;
 import hotel.models.Room;
-import hotel.views.guestAccount.GuestAccountController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -198,21 +196,5 @@ public class AvailableRoomSearchController implements Initializable {
                 "Guest Account", null, false);
         Stage stage = (Stage) searchBtn.getScene().getWindow();
         stage.close();
-    }
-
-    @FXML
-    private void exportAsPDF(ActionEvent event) {
-//        List<List> printData = new ArrayList<>();
-//        String[] headers = {"   Name    ", "ID", "Mobile", "    Email   "};
-//        printData.add(Arrays.asList(headers));
-//        for (Member member : list) {
-//            List<String> row = new ArrayList<>();
-//            row.add(member.getName());
-//            row.add(member.getId());
-//            row.add(member.getMobile());
-//            row.add(member.getEmail());
-//            printData.add(row);
-//        }
-//        HotelHelper.initPDFExprot(rootPane, contentPane, getStage(), printData);
     }
 }

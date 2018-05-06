@@ -24,6 +24,8 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class GuestAccountController implements Initializable {
@@ -61,6 +63,8 @@ public class GuestAccountController implements Initializable {
     private TableColumn<Reservation, String> toPayColumn;
     @FXML
     private TableColumn<Reservation, String> checkedInCollumn;
+    @FXML
+    private TableColumn<Reservation, String> locationCollumn;
 
     @FXML
     private TableView<Room> availableRoomsTableView;
@@ -159,6 +163,7 @@ public class GuestAccountController implements Initializable {
         totalDayscolumn.setCellValueFactory(new PropertyValueFactory<>("totalDays"));
         toPayColumn.setCellValueFactory(new PropertyValueFactory<>("toPay"));
         checkedInCollumn.setCellValueFactory(new PropertyValueFactory<>("checkedIn"));
+        locationCollumn.setCellValueFactory(new PropertyValueFactory<>("location"));
 
         roomcolumn.setCellValueFactory(new PropertyValueFactory<>("roomID"));
         qualitycolumn.setCellValueFactory(new PropertyValueFactory<>("quality"));
@@ -244,25 +249,34 @@ public class GuestAccountController implements Initializable {
 
     @FXML
     private void onPrintBillCntxtBtnClick(ActionEvent event) {
-        System.out.println("PRINTING BILL!");
+            List<List> printData = new ArrayList<>();
+            String[] headers = {"   Name    ", "ID", "Mobile", "    Email   "};
+            printData.add(Arrays.asList(headers));
+            for (Reservation reservation : reservationsList) {
+                List<String> row = new ArrayList<>();
+                row.add(reservation.getId());
+                row.add(reservation.getFirstName());
+                row.add(reservation.getLastName());
+                row.add(reservation.getAddress());
+                row.add(reservation.getSex());
+                row.add(reservation.getPhoneNumber());
+                row.add(reservation.getCreditCardNumber());
+                row.add(reservation.getPassportNumber());
+                row.add("ROOMID");
+                row.add("QUALITY");
+                row.add("BEDNUMBER");
+                row.add("SMOKING");
+                row.add("ADJOINING");
+                row.add("MAXRATE");
+                row.add("LOCATION");
+                row.add(reservation.getCheckInDate().toString());
+                row.add(reservation.getCheckOutDate().toString());
+                row.add(String.format("%s", reservation.getTotalDays()));
+                row.add(String.format("%s", reservation.getToPay()));
+                printData.add(row);
+            }
+//            HotelHelper.initPDFExprot(rootPane, contentPane, getStage(), printData);
     }
-
-//    @FXML
-//    private void exportAsPDF(ActionEvent event) {
-//        List<List> printData = new ArrayList<>();
-//        String[] headers = {"   Title   ", "ID", "  Author  ", "  Publisher ", "Avail"};
-//        printData.add(Arrays.asList(headers));
-//        for (Reservation reservation : list) {
-//            List<String> row = new ArrayList<>();
-//            row.add(reservation.getTitle());
-//            row.add(reservation.getId());
-//            row.add(reservation.getAuthor());
-//            row.add(reservation.getPublisher());
-//            row.add(reservation.getAvailabilty());
-//            printData.add(row);
-//        }
-//        HotelHelper.initPDFExprot(rootPane, contentPane, getStage(), printData);
-//    }
 
     @FXML
     private void onSearchBtnClick(ActionEvent event) {
@@ -320,7 +334,7 @@ public class GuestAccountController implements Initializable {
                         rs.getString("CREDITCARDNUMBER"), rs.getString("PASSPORTNUMBER"),
                         rs.getDate("CHECKINDATE"), rs.getDate("CHECKOUTDATE"),
                         rs.getInt("TOTALDAYS"), rs.getInt("TOPAY"),
-                        rs.getString("CHECKEDIN")));
+                        rs.getString("CHECKEDIN"), rs.getString("LOCATION")));
             }
             reservationsTableView.setItems(reservationsList);
         } catch (Exception ex) {
@@ -384,13 +398,14 @@ public class GuestAccountController implements Initializable {
             parameters.add(creditCardNumberTextField.getText());
             parameters.add(passportNumberTextField.getText());
             parameters.add(roomsList.get(0).getRoomID());
+            parameters.add(Room.getLocation());
             parameters.add(Room.getCheckInDate());
             parameters.add(Room.getCheckOutDate());
             parameters.add(java.time.temporal.ChronoUnit.DAYS.between(Room.getCheckInDate(), Room.getCheckOutDate()));
             parameters.add(Room.getRoom().getMaxRate() * java.time.temporal.ChronoUnit.DAYS.between(Room.getCheckInDate(), Room.getCheckOutDate()));
             parameters.add("No");
             try {
-                String query = "INSERT INTO RESERVATIONS(ID, FIRSTNAME, LASTNAME, ADDRESS, SEX, PHONENUMBER, CREDITCARDNUMBER, PASSPORTNUMBER, ROOMID, CHECKINDATE, CHECKOUTDATE, TOTALDAYS, TOPAY, CHECKEDIN) VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                String query = "INSERT INTO RESERVATIONS(ID, FIRSTNAME, LASTNAME, ADDRESS, SEX, PHONENUMBER, CREDITCARDNUMBER, PASSPORTNUMBER, ROOMID, LOCATION, CHECKINDATE, CHECKOUTDATE, TOTALDAYS, TOPAY, CHECKEDIN) VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 connection.executeWithParameters(query, parameters);
             } catch (Exception ex) {
                 System.err.println(ex);

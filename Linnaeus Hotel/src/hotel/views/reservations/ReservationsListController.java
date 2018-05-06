@@ -2,6 +2,7 @@ package hotel.views.reservations;
 
 import hotel.database.DbConnect;
 import hotel.models.Reservation;
+import hotel.models.Room;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,6 +15,7 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ReservationsListController implements Initializable {
@@ -78,9 +80,11 @@ public class ReservationsListController implements Initializable {
     private void loadData() {
         list.clear();
         DbConnect connection = new DbConnect();
+        ArrayList parameters = new ArrayList();
+        parameters.add(Room.getLocation());
         try {
-            String query = "SELECT * FROM RESERVATIONS";
-            ResultSet rs = connection.execute(query);
+            String query = "SELECT * FROM RESERVATIONS WHERE LOCATION=?";
+            ResultSet rs = connection.executeWithParameters(query, parameters);
             while (rs.next()) {
                 list.add(new Reservation(rs.getString("ID"), rs.getString("FIRSTNAME"),
                         rs.getString("LASTNAME"), rs.getString("ADDRESS"),
@@ -88,7 +92,7 @@ public class ReservationsListController implements Initializable {
                         rs.getString("CREDITCARDNUMBER"), rs.getString("PASSPORTNUMBER"),
                         rs.getDate("CHECKINDATE"), rs.getDate("CHECKOUTDATE"),
                         rs.getInt("TOTALDAYS"), rs.getInt("TOPAY"),
-                        rs.getString("CHECKEDIN")));
+                        rs.getString("CHECKEDIN"), rs.getString("LOCATION")));
             }
             reservationsTableView.setItems(list);
         } catch (Exception ex) {
