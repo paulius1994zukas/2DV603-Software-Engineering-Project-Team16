@@ -65,7 +65,6 @@ public class AvailableRoomSearchController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         initCol();
         location = Room.getLocation();
-        loadData();
         setQualityLevels();
         setBedCount();
         setSmoking();
@@ -117,10 +116,6 @@ public class AvailableRoomSearchController implements Initializable {
         adjoiningcolumn.setCellValueFactory(new PropertyValueFactory<>("adjoining"));
         priceRatecolumn.setCellValueFactory(new PropertyValueFactory<>("maxRate"));
     }
-
-//    private Stage getStage() {
-//        return (Stage) tableView.getScene().getWindow();
-//    }
 
     private void loadData() {
         roomsList.clear();

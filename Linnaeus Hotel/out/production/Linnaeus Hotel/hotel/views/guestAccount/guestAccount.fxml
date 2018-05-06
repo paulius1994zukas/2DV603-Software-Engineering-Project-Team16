@@ -115,16 +115,18 @@
                   <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
                   <JFXTextField id="createFirstNameTxtField" fx:id="createFirstNameTxtField" promptText="First Name" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
                   <JFXTextField id="createLastNameTxtField" fx:id="createLastNameTxtField" promptText="Last Name" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
                   <JFXTextField id="createAddressTxtField" fx:id="createAddressTxtField" promptText="Address" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                  <JFXTextField id="createPhoneNumberTxtField" fx:id="createPhoneNumberTxtField" promptText="Phone Number" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <JFXTextField id="createPhoneNumberTxtField" fx:id="createPhoneNumberTxtField" promptText="Phone Number" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
                   <JFXTextField id="createCreditCardNumberTxtField" fx:id="createCreditCardNumberTxtField" promptText="Credit Card Number" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
                   <JFXTextField id="createPassportNumberTxtField" fx:id="createPassportNumberTxtField" promptText="Passport Number" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                  <JFXButton id="createSubmitBtn" fx:id="createSubmitBtn" onAction="#onCreateSubmitBtnClick" text="Submit" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                  <JFXButton id="createCancelBtn" fx:id="createCancelBtn" onAction="#onCreateCancelBtnClick" text="Cancel" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <JFXButton id="createSubmitBtn" fx:id="createSubmitBtn" onAction="#onCreateSubmitBtnClick" text="Submit" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <JFXButton id="createCancelBtn" fx:id="createCancelBtn" onAction="#onCreateCancelBtnClick" text="Cancel" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <JFXComboBox id="createSexCmbBox" fx:id="createSexCmbBox" promptText="Sex" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
                </children>
                <padding>
                   <Insets bottom="50.0" left="50.0" right="50.0" top="100.0" />

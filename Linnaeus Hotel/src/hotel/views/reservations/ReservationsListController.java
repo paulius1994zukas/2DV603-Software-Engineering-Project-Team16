@@ -31,6 +31,8 @@ public class ReservationsListController implements Initializable {
     @FXML
     private TableColumn<Reservation, String> addressColumn;
     @FXML
+    private TableColumn<Reservation, String> sexColumn;
+    @FXML
     private TableColumn<Reservation, String> phoneNumberColumn;
     @FXML
     private TableColumn<Reservation, String> creditCardNumberColumn;
@@ -42,6 +44,8 @@ public class ReservationsListController implements Initializable {
     private TableColumn<Reservation, String> checkOutDateColumn;
     @FXML
     private TableColumn<Reservation, Boolean> totalDaysColumn;
+    @FXML
+    private TableColumn<Reservation, Boolean> toPayColumn;
     @FXML
     private TableColumn<Reservation, Boolean> checkedInColumn;
 
@@ -60,11 +64,13 @@ public class ReservationsListController implements Initializable {
         firstNameColumn.setCellValueFactory(new PropertyValueFactory<>("firstName"));
         lastNameColumn.setCellValueFactory(new PropertyValueFactory<>("lastName"));
         addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
+        sexColumn.setCellValueFactory(new PropertyValueFactory<>("sex"));
         phoneNumberColumn.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
         creditCardNumberColumn.setCellValueFactory(new PropertyValueFactory<>("creditCardNumber"));
         passportNumberColumn.setCellValueFactory(new PropertyValueFactory<>("passportNumber"));
         checkInDateColumn.setCellValueFactory(new PropertyValueFactory<>("checkInDate"));
         checkOutDateColumn.setCellValueFactory(new PropertyValueFactory<>("checkOutDate"));
+        toPayColumn.setCellValueFactory(new PropertyValueFactory<>("toPay"));
         totalDaysColumn.setCellValueFactory(new PropertyValueFactory<>("totalDays"));
         checkedInColumn.setCellValueFactory(new PropertyValueFactory<>("checkedIn"));
     }
@@ -78,9 +84,10 @@ public class ReservationsListController implements Initializable {
             while (rs.next()) {
                 list.add(new Reservation(rs.getString("ID"), rs.getString("FIRSTNAME"),
                         rs.getString("LASTNAME"), rs.getString("ADDRESS"),
-                        rs.getString("PHONENUMBER"), rs.getString("CREDITCARDNUMBER"),
-                        rs.getString("PASSPORTNUMBER"), rs.getDate("CHECKINDATE"),
-                        rs.getDate("CHECKOUTDATE"), rs.getInt("TOTALDAYS"),
+                        rs.getString("SEX"), rs.getString("PHONENUMBER"),
+                        rs.getString("CREDITCARDNUMBER"), rs.getString("PASSPORTNUMBER"),
+                        rs.getDate("CHECKINDATE"), rs.getDate("CHECKOUTDATE"),
+                        rs.getInt("TOTALDAYS"), rs.getInt("TOPAY"),
                         rs.getString("CHECKEDIN")));
             }
             reservationsTableView.setItems(list);

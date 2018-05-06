@@ -78,7 +78,7 @@ public class AddAFeeController implements Initializable {
         } finally {
             connection.closeConnection();
             alert.showSimpleAlert("Guest account was created!",
-                    String.format("Fee on reservation ID %s was successfully added.", "! RESERVATION ID !"));
+                    String.format("Fee on reservation ID %s was successfully added.", reservation.getReservation().getId()));
             getFees();
         }
         clearFields();

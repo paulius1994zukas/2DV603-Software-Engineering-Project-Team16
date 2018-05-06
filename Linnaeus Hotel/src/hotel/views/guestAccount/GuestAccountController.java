@@ -3,37 +3,28 @@ package hotel.views.guestAccount;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
-
-import java.io.IOException;
-import java.net.URL;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import hotel.database.DbConnect;
 import hotel.helpers.AlertMaker;
 import hotel.helpers.HotelHelper;
 import hotel.models.GuestAccount;
 import hotel.models.Reservation;
 import hotel.models.Room;
-import hotel.views.main.MainController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+
+import java.net.URL;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class GuestAccountController implements Initializable {
     ObservableList<GuestAccount> guestAccountsList = FXCollections.observableArrayList();
@@ -151,7 +142,6 @@ public class GuestAccountController implements Initializable {
         currenctlyBookingVBox.setManaged(true);
         room = Room.getRoom();
         roomsList.add(room);
-        System.out.println(roomsList.size());
         availableRoomsTableView.setItems(roomsList);
     }
 
@@ -295,12 +285,18 @@ public class GuestAccountController implements Initializable {
                         rs.getString("PHONENUMBER"), rs.getString("CREDITCARDNUMBER"),
                         rs.getString("PASSPORTNUMBER")));
             }
-            firstNameTextField.setText(guestAccountsList.get(0).getFirstName());
-            lastNameTextField.setText(guestAccountsList.get(0).getLastName());
-            sexCmbBox.getSelectionModel().select(guestAccountsList.get(0).getSex());
-            addressTextField.setText(guestAccountsList.get(0).getAddress());
-            phoneNumberTextField.setText(guestAccountsList.get(0).getPhoneNumber());
-            creditCardNumberTextField.setText(guestAccountsList.get(0).getCreditCardNumber());
+            if (guestAccountsList.isEmpty()) {
+                alert.showSimpleAlert("No guest account!",
+                        String.format("Guest account for passport number %s does not exist!",
+                                passportNumberTextField.getText()));
+            } else {
+                firstNameTextField.setText(guestAccountsList.get(0).getFirstName());
+                lastNameTextField.setText(guestAccountsList.get(0).getLastName());
+                addressTextField.setText(guestAccountsList.get(0).getAddress());
+                sexCmbBox.getSelectionModel().select(guestAccountsList.get(0).getSex());
+                phoneNumberTextField.setText(guestAccountsList.get(0).getPhoneNumber());
+                creditCardNumberTextField.setText(guestAccountsList.get(0).getCreditCardNumber());
+            }
         } catch (Exception ex) {
             System.err.println(ex);
             alert.showErrorMessage(ex);
@@ -320,9 +316,10 @@ public class GuestAccountController implements Initializable {
             while (rs.next()) {
                 reservationsList.add(new Reservation(rs.getString("ID"), rs.getString("FIRSTNAME"),
                         rs.getString("LASTNAME"), rs.getString("ADDRESS"),
-                        rs.getString("PHONENUMBER"), rs.getString("CREDITCARDNUMBER"),
-                        rs.getString("PASSPORTNUMBER"), rs.getDate("CHECKINDATE"),
-                        rs.getDate("CHECKOUTDATE"), rs.getInt("TOTALDAYS"),
+                        rs.getString("SEX"), rs.getString("PHONENUMBER"),
+                        rs.getString("CREDITCARDNUMBER"), rs.getString("PASSPORTNUMBER"),
+                        rs.getDate("CHECKINDATE"), rs.getDate("CHECKOUTDATE"),
+                        rs.getInt("TOTALDAYS"), rs.getInt("TOPAY"),
                         rs.getString("CHECKEDIN")));
             }
             reservationsTableView.setItems(reservationsList);
@@ -341,20 +338,30 @@ public class GuestAccountController implements Initializable {
         parameters.add(createFirstNameTxtField.getText());
         parameters.add(createLastNameTxtField.getText());
         parameters.add(createAddressTxtField.getText());
+        parameters.add(createSexCmbBox.getSelectionModel().getSelectedItem());
         parameters.add(createPhoneNumberTxtField.getText());
         parameters.add(createCreditCardNumberTxtField.getText());
         parameters.add(createPassportNumberTxtField.getText());
         try {
-            String query = "INSERT INTO GUESTS(ID, FIRSTNAME, LASTNAME, ADDRESS, PHONENUMBER, CREDITCARDNUMBER, PASSPORTNUMBER) VALUES(NULL,?,?,?,?,?,?)";
-            connection.executeWithParameters(query, parameters);
+            if (createFirstNameTxtField.getText().isEmpty() || createLastNameTxtField.getText().isEmpty() ||
+                    createAddressTxtField.getText().isEmpty() ||
+                    createPhoneNumberTxtField.getText().isEmpty() || createCreditCardNumberTxtField.getText().isEmpty()
+                    || createPassportNumberTxtField.getText().isEmpty()) {
+                alert.showSimpleAlert("Oops, you have left something out!", "In order to create a " +
+                        "new guest account all the fields above must contain value. Please do not leave any fields blank!");
+            } else {
+                String query = "INSERT INTO GUESTS(ID, FIRSTNAME, LASTNAME, ADDRESS, SEX, PHONENUMBER, CREDITCARDNUMBER, PASSPORTNUMBER) VALUES(NULL,?,?,?,?,?,?,?)";
+                connection.executeWithParameters(query, parameters);
+                connection.closeConnection();
+                alert.showSimpleAlert("Guest account was created!",
+                        String.format("User account for %s %s was successfully created!",
+                                createFirstNameTxtField.getText(), createLastNameTxtField.getText()));
+            }
         } catch (Exception ex) {
             System.err.println(ex);
             alert.showErrorMessage(ex);
         } finally {
-            connection.closeConnection();
-            alert.showSimpleAlert("Guest account was created!",
-                    String.format("User account for %s %s was successfully created!",
-                            createFirstNameTxtField.getText(), createLastNameTxtField.getText()));
+
         }
         clearCreateFields();
     }
@@ -372,28 +379,32 @@ public class GuestAccountController implements Initializable {
             parameters.add(firstNameTextField.getText());
             parameters.add(lastNameTextField.getText());
             parameters.add(addressTextField.getText());
+            parameters.add(sexCmbBox.getSelectionModel().getSelectedItem());
             parameters.add(phoneNumberTextField.getText());
             parameters.add(creditCardNumberTextField.getText());
             parameters.add(passportNumberTextField.getText());
             parameters.add(roomsList.get(0).getRoomID());
             parameters.add(Room.getCheckInDate());
             parameters.add(Room.getCheckOutDate());
-            parameters.add(1);
-            //  parameters.add(Days.daysBetween(Room.getCheckInDate(), Room.getCheckOutDate()).getDays());
+            parameters.add(java.time.temporal.ChronoUnit.DAYS.between(Room.getCheckInDate(), Room.getCheckOutDate()));
+            parameters.add(Room.getRoom().getMaxRate() * java.time.temporal.ChronoUnit.DAYS.between(Room.getCheckInDate(), Room.getCheckOutDate()));
             parameters.add("No");
             try {
-                String query = "INSERT INTO RESERVATIONS(ID, FIRSTNAME, LASTNAME, ADDRESS, PHONENUMBER, CREDITCARDNUMBER, PASSPORTNUMBER, ROOMID, CHECKINDATE, CHECKOUTDATE, TOTALDAYS, CHECKEDIN) VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?)";
+                String query = "INSERT INTO RESERVATIONS(ID, FIRSTNAME, LASTNAME, ADDRESS, SEX, PHONENUMBER, CREDITCARDNUMBER, PASSPORTNUMBER, ROOMID, CHECKINDATE, CHECKOUTDATE, TOTALDAYS, TOPAY, CHECKEDIN) VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 connection.executeWithParameters(query, parameters);
             } catch (Exception ex) {
                 System.err.println(ex);
                 alert.showErrorMessage(ex);
             } finally {
                 connection.closeConnection();
-                alert.showSimpleAlert("Guest account was created!",
-                        String.format("User account for %s %s was successfully created!",
-                                createFirstNameTxtField.getText(), createLastNameTxtField.getText()));
+                alert.showSimpleAlert("Reservation successful!",
+                        String.format("New reservation for guest %s %s was successfully added!",
+                                firstNameTextField.getText(), lastNameTextField.getText()));
             }
-            clearCreateFields();
+            getReservations();
+            roomsList.clear();
+            currenctlyBookingVBox.setManaged(false);
+            currenctlyBookingVBox.setVisible(false);
         }
     }
 

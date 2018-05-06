@@ -9,28 +9,32 @@ public class Reservation {
     private String firstName;
     private String lastName;
     private String address;
+    private String sex;
     private String phoneNumber;
     private String creditCardNumber;
     private String passportNumber;
     private Date checkInDate;
     private Date checkOutDate;
     private int totalDays;
+    private int toPay;
     private String checkedIn;
     private static Reservation reservation;
 
-    public Reservation(String id, String firstName, String lastName, String address, String phoneNumber,
+    public Reservation(String id, String firstName, String lastName, String address, String sex, String phoneNumber,
                        String creditCardNumber, String passportNumber, Date checkInDate, Date checkOutDate,
-                       int totalDays, String checkedIn) {
+                       int totalDays, int toPay, String checkedIn) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
+        this.sex = sex;
         this.phoneNumber = phoneNumber;
         this.creditCardNumber = creditCardNumber;
         this.passportNumber = passportNumber;
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
         this.totalDays = totalDays;
+        this.toPay = toPay;
         this.checkedIn = checkedIn;
     }
 
@@ -68,6 +72,14 @@ public class Reservation {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     public String getPhoneNumber() {
@@ -116,6 +128,14 @@ public class Reservation {
 
     public void setTotalDays(int totalDays) {
         this.totalDays = totalDays;
+    }
+
+    public int getToPay() {
+        return toPay;
+    }
+
+    public void setToPay(int toPay) {
+        this.toPay = toPay;
     }
 
     public String getCheckedIn() {
