@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXTextField;
 import hotel.database.DbConnect;
 import hotel.helpers.AlertMaker;
 import hotel.helpers.HotelHelper;
+import hotel.helpers.InvoicePrinter;
 import hotel.models.GuestAccount;
 import hotel.models.Reservation;
 import hotel.models.Room;
@@ -249,32 +250,36 @@ public class GuestAccountController implements Initializable {
 
     @FXML
     private void onPrintBillCntxtBtnClick(ActionEvent event) {
-            List<List> printData = new ArrayList<>();
-            String[] headers = {"   Name    ", "ID", "Mobile", "    Email   "};
-            printData.add(Arrays.asList(headers));
-            for (Reservation reservation : reservationsList) {
-                List<String> row = new ArrayList<>();
-                row.add(reservation.getId());
-                row.add(reservation.getFirstName());
-                row.add(reservation.getLastName());
-                row.add(reservation.getAddress());
-                row.add(reservation.getSex());
-                row.add(reservation.getPhoneNumber());
-                row.add(reservation.getCreditCardNumber());
-                row.add(reservation.getPassportNumber());
-                row.add("ROOMID");
-                row.add("QUALITY");
-                row.add("BEDNUMBER");
-                row.add("SMOKING");
-                row.add("ADJOINING");
-                row.add("MAXRATE");
-                row.add("LOCATION");
-                row.add(reservation.getCheckInDate().toString());
-                row.add(reservation.getCheckOutDate().toString());
-                row.add(String.format("%s", reservation.getTotalDays()));
-                row.add(String.format("%s", reservation.getToPay()));
-                printData.add(row);
-            }
+        String pdfFilename = "src/resources/Invoice_Ex.pdf";
+        InvoicePrinter generateInvoice = new InvoicePrinter();
+
+        generateInvoice.createPDF(pdfFilename);
+//            List<List> printData = new ArrayList<>();
+//            String[] headers = {"   Name    ", "ID", "Mobile", "    Email   "};
+//            printData.add(Arrays.asList(headers));
+//            for (Reservation reservation : reservationsList) {
+//                List<String> row = new ArrayList<>();
+//                row.add(reservation.getId());
+//                row.add(reservation.getFirstName());
+//                row.add(reservation.getLastName());
+//                row.add(reservation.getAddress());
+//                row.add(reservation.getSex());
+//                row.add(reservation.getPhoneNumber());
+//                row.add(reservation.getCreditCardNumber());
+//                row.add(reservation.getPassportNumber());
+//                row.add("ROOMID");
+//                row.add("QUALITY");
+//                row.add("BEDNUMBER");
+//                row.add("SMOKING");
+//                row.add("ADJOINING");
+//                row.add("MAXRATE");
+//                row.add("LOCATION");
+//                row.add(reservation.getCheckInDate().toString());
+//                row.add(reservation.getCheckOutDate().toString());
+//                row.add(String.format("%s", reservation.getTotalDays()));
+//                row.add(String.format("%s", reservation.getToPay()));
+//                printData.add(row);
+//            }
 //            HotelHelper.initPDFExprot(rootPane, contentPane, getStage(), printData);
     }
 
