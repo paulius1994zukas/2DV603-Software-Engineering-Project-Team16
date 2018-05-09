@@ -7,7 +7,7 @@ public class Room {
     private String roomID;
     private String quality;
     private String bedNumber;
-    public String smoking;
+    private String smoking;
     private String adjoining;
     private int maxRate;
     private static String location;

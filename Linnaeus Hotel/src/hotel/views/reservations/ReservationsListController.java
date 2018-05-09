@@ -90,9 +90,10 @@ public class ReservationsListController implements Initializable {
                         rs.getString("LASTNAME"), rs.getString("ADDRESS"),
                         rs.getString("SEX"), rs.getString("PHONENUMBER"),
                         rs.getString("CREDITCARDNUMBER"), rs.getString("PASSPORTNUMBER"),
-                        rs.getDate("CHECKINDATE"), rs.getDate("CHECKOUTDATE"),
-                        rs.getInt("TOTALDAYS"), rs.getInt("TOPAY"),
-                        rs.getString("CHECKEDIN"), rs.getString("LOCATION")));
+                        rs.getString("ROOMID"), rs.getDate("CHECKINDATE"),
+                        rs.getDate("CHECKOUTDATE"), rs.getInt("TOTALDAYS"),
+                        rs.getInt("TOPAY"), rs.getString("CHECKEDIN"),
+                        rs.getString("LOCATION")));
             }
             reservationsTableView.setItems(list);
         } catch (Exception ex) {
