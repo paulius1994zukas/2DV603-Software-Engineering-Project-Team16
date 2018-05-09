@@ -37,7 +37,7 @@ public class InvoicePrinter {
     private int feeRowIndex = 1;
     private int totalFeesCounter = 0;
 
-    public void createPDF(String pdfFilename) {
+    public boolean createPDF(String pdfFilename) {
         try {
             reservation = Reservation.getReservation();
             LocalDate localDate = LocalDate.now();
@@ -99,7 +99,7 @@ public class InvoicePrinter {
                     roomInfo.get(0).getQuality(), roomInfo.get(0).getBedNumber(), roomInfo.get(0).getSmoking(), roomInfo.get(0).getAdjoining())));
             billTable.addCell(getBillRowCell(String.format(reservation.getCheckInDate().toString())));
             billTable.addCell(getBillRowCell(String.format(reservation.getCheckOutDate().toString())));
-            billTable.addCell(getBillRowCell(String.format("%.2f", (float)roomInfo.get(0).getMaxRate())));
+            billTable.addCell(getBillRowCell(String.format("%.2f", (float) roomInfo.get(0).getMaxRate())));
             billTable.addCell(getBillRowCell(String.format("%s", reservation.getTotalDays())));
 
             for (int i = 0; i <= 14; i++) {
@@ -118,8 +118,8 @@ public class InvoicePrinter {
             feesTable.addCell(getBillHeaderCell("Description"));
             feesTable.addCell(getBillHeaderCell("Fee"));
             getFees();
-            for(int i = 0; i < fees.size(); i++) {
-                feesTable.addCell(getBillRowCell(String.format("%s", i+1)));
+            for (int i = 0; i < fees.size(); i++) {
+                feesTable.addCell(getBillRowCell(String.format("%s", i + 1)));
                 feesTable.addCell(getBillRowCell(String.format(fees.get(i).getDescription())));
                 feesTable.addCell(getBillRowCell(String.format("%s ", fees.get(i).getFee())));
                 totalFeesCounter = totalFeesCounter + fees.get(i).getFee();
@@ -131,21 +131,21 @@ public class InvoicePrinter {
             validity.addCell(getValidityCell(" * Thank you for staying with us at Linnaeus Hotel! * "));
             validity.addCell(getValidityCell(" * We are looking forward to seeing you again * "));
             validity.addCell(getValidityCell(" "));
-            PdfPCell summaryL = new PdfPCell (validity);
-            summaryL.setColspan (3);
-            summaryL.setPadding (1.0f);
+            PdfPCell summaryL = new PdfPCell(validity);
+            summaryL.setColspan(3);
+            summaryL.setPadding(1.0f);
             feesTable.addCell(summaryL);
 
             PdfPTable accounts = new PdfPTable(2);
             accounts.setWidthPercentage(100);
             accounts.addCell(getAccountsCell("Subtotal"));
-            accounts.addCell(getAccountsCellR(String.format("%.2f", (float)reservation.getToPay())));
+            accounts.addCell(getAccountsCellR(String.format("%.2f", (float) reservation.getToPay())));
             accounts.addCell(getAccountsCell("Fees"));
             accounts.addCell(getAccountsCellR(String.format("%s", totalFeesCounter)));
             accounts.addCell(getAccountsCell("Tax(2.5%)"));
-            accounts.addCell(getAccountsCellR(String.format("%.2f", (((float)totalFeesCounter + (float)reservation.getToPay()) * 2.5) / 100)));
+            accounts.addCell(getAccountsCellR(String.format("%.2f", (((float) totalFeesCounter + (float) reservation.getToPay()) * 2.5) / 100)));
             accounts.addCell(getAccountsCell("Total"));
-            accounts.addCell(getAccountsCellR(String.format("%.2f", (float)totalFeesCounter + (float)reservation.getToPay() + (((float)totalFeesCounter + (float)reservation.getToPay()) * 2.5) / 100)));
+            accounts.addCell(getAccountsCellR(String.format("%.2f", (float) totalFeesCounter + (float) reservation.getToPay() + (((float) totalFeesCounter + (float) reservation.getToPay()) * 2.5) / 100)));
 
             PdfPCell summaryR = new PdfPCell(accounts);
             summaryR.setColspan(4);
@@ -162,7 +162,6 @@ public class InvoicePrinter {
                     "cardholder's agreement with the issuer."); // customer information
 
             document.open();
-
             document.add(image);
             document.add(irhTable);
             document.add(bill);
@@ -173,16 +172,13 @@ public class InvoicePrinter {
             document.add(feesTable);
             document.add(signature);
             document.add(info);
-
             document.close();
-
             file.close();
-
-            System.out.println("Pdf created successfully..");
-
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return false;
     }
 
     public static void setHeader() {

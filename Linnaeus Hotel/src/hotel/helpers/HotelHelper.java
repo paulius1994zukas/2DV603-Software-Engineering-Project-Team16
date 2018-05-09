@@ -56,15 +56,15 @@ public class HotelHelper {
         return controller;
     }
 
-    public static void initPDFExprot(StackPane rootPane, Node contentPane, Stage stage, List<List> data) {
+    public static void initPDFExprot(Stage stage) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save as PDF");
         FileChooser.ExtensionFilter extFilter
                 = new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf");
         fileChooser.getExtensionFilters().add(extFilter);
         File saveLoc = fileChooser.showSaveDialog(stage);
-        ListToPDF ltp = new ListToPDF();
-        boolean flag = ltp.doPrintToPdf(data, saveLoc, ListToPDF.Orientation.LANDSCAPE);
+        InvoicePrinter invoicePrinter = new InvoicePrinter();
+        boolean flag = invoicePrinter.createPDF(saveLoc.getAbsolutePath());
         JFXButton okayBtn = new JFXButton("Okay");
         JFXButton openBtn = new JFXButton("View File");
         openBtn.setOnAction((ActionEvent event1) -> {

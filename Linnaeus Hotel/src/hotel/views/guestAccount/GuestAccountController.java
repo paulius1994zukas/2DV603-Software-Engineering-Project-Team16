@@ -20,14 +20,18 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import static hotel.helpers.HotelHelper.initPDFExprot;
 
 public class GuestAccountController implements Initializable {
     ObservableList<GuestAccount> guestAccountsList = FXCollections.observableArrayList();
@@ -253,13 +257,18 @@ public class GuestAccountController implements Initializable {
 
     @FXML
     private void onPrintBillCntxtBtnClick(ActionEvent event) {
+        Stage stage = (Stage) searchBtn.getScene().getWindow();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save as PDF");
+        FileChooser.ExtensionFilter extFilter
+                = new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf");
+        fileChooser.getExtensionFilters().add(extFilter);
+        File saveLoc = fileChooser.showSaveDialog(stage);
         String pdfFilename = "src/resources/Invoice_Ex.pdf";
         InvoicePrinter generateInvoice = new InvoicePrinter();
-
         Reservation reservation = new Reservation();
         reservation.setReservation(reservationsTableView.getSelectionModel().getSelectedItem());
-
-        generateInvoice.createPDF(pdfFilename);
+        generateInvoice.createPDF(saveLoc.toString());
     }
 
     @FXML
