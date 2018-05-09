@@ -19,7 +19,7 @@
    <columnConstraints>
       <ColumnConstraints hgrow="ALWAYS" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.0" minWidth="1.0" prefWidth="1.0" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="58.6666259765625" prefWidth="144.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" prefWidth="144.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="51.0" minWidth="16.3333740234375" prefWidth="51.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="139.0" minWidth="139.0" prefWidth="139.0" />
       <ColumnConstraints hgrow="SOMETIMES" />
@@ -34,15 +34,15 @@
       <RowConstraints minHeight="1.0" prefHeight="1.0" vgrow="SOMETIMES" />
       <RowConstraints vgrow="SOMETIMES" />
       <RowConstraints vgrow="SOMETIMES" />
-      <RowConstraints minHeight="100.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="-Infinity" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="185.77777099609375" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
       <RowConstraints vgrow="SOMETIMES" />
       <RowConstraints vgrow="SOMETIMES" />
       <RowConstraints vgrow="SOMETIMES" />
       <RowConstraints vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="2.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="2.0" minHeight="2.0" prefHeight="2.0" vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
       <RowConstraints vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
@@ -111,7 +111,7 @@
             </JFXButton>
          </children>
       </HBox>
-      <GridPane id="overallRoomStatusGridPane" hgap="5.0" vgap="5.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.rowSpan="10" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+      <GridPane id="overallRoomStatusGridPane" hgap="5.0" vgap="5.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.rowSpan="7" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" />
             <ColumnConstraints hgrow="SOMETIMES" />
@@ -126,109 +126,189 @@
             <RowConstraints vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room209VBox" fx:id="room209VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 209" />
+                  <Label text="Room 209">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room208VBox" fx:id="room208VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 208" />
+                  <Label text="Room 208">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room207VBox" fx:id="room207VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 207" />
+                  <Label text="Room 207">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room206VBox" fx:id="room206VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 206" />
+                  <Label text="Room 206">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room205VBox" fx:id="room205VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 205" />
+                  <Label text="Room 205">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room204VBox" fx:id="room204VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 204" />
+                  <Label text="Room 204">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room203VBox" fx:id="room203VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 203" />
+                  <Label text="Room 203">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room202VBox" fx:id="room202VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 202" />
+                  <Label text="Room 202">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room201VBox" fx:id="room201VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 201" />
+                  <Label text="Room 201">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room200VBox" fx:id="room200VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 200" />
+                  <Label text="Room 200">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room109VBox" fx:id="room109VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 109" />
+                  <Label text="Room 109">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room108VBox" fx:id="room108VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 108" />
+                  <Label text="Room 108">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room107VBox" fx:id="room107VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 107" />
+                  <Label text="Room 107">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room106VBox" fx:id="room106VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 106" />
+                  <Label text="Room 106">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room105VBox" fx:id="room105VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 105" />
+                  <Label text="Room 105">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room104VBox" fx:id="room104VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 104" />
+                  <Label text="Room 104">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room103VBox" fx:id="room103VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 103" />
+                  <Label text="Room 103">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room102VBox" fx:id="room102VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 102" />
+                  <Label text="Room 102">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room101VBox" fx:id="room101VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 101" />
+                  <Label text="Room 101">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <VBox id="room100VBox" fx:id="room100VBox" alignment="CENTER" style="-fx-background-color: #8A9A5B;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <JFXButton alignment="CENTER" contentDisplay="CENTER" text="Room 100" />
+                  <Label text="Room 100">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </VBox>
          </children>
       </GridPane>
-      <GridPane hgap="5.0" vgap="5.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.rowSpan="7" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+      <GridPane hgap="5.0" vgap="5.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.rowSpan="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" />
             <ColumnConstraints hgrow="SOMETIMES" />
@@ -249,60 +329,59 @@
             <RowConstraints vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label text="Rooms: ">
+            <Label text="Rooms: " GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Total: " GridPane.rowIndex="1" />
-            <Label id="totalRoomsLbl" fx:id="totalRoomsLbl" text="20" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label text="Occupied: " GridPane.rowIndex="2" />
-            <Label id="occupiedRoomsLbl" fx:id="occupiedRoomsLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label text="Available: " GridPane.rowIndex="3" />
-            <Label id="availableRoomsLbl" fx:id="availableRoomsLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label text="Guests: " GridPane.columnIndex="3">
+            <Label text="Total: " GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label id="totalRoomsLbl" fx:id="totalRoomsLbl" text="20" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="Occupied: " GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label id="occupiedRoomsLbl" fx:id="occupiedRoomsLbl" text="0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="Available: " GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label id="availableRoomsLbl" fx:id="availableRoomsLbl" text="0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="Guests: " GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Total: " GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Label id="totalGuestsLbl" fx:id="totalGuestsLbl" text="0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <Label text="Male: " GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Label id="maleGuestsLbl" fx:id="maleGuestsLbl" text="0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <Label text="Female: " GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <Label id="femaleGuestsLbl" fx:id="femaleGuestsLbl" text="0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-            <Label text="Available: " GridPane.rowIndex="4">
+            <Label text="Total: " GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label id="totalGuestsLbl" fx:id="totalGuestsLbl" text="0" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="Male: " GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label id="maleGuestsLbl" fx:id="maleGuestsLbl" text="0" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="Female: " GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label id="femaleGuestsLbl" fx:id="femaleGuestsLbl" text="0" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="Qualities:" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Penthouse:" GridPane.rowIndex="5" />
-            <Label id="availablePenthouseLbl" fx:id="availablePenthouseLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label text="Lake View: " GridPane.rowIndex="6" />
-            <Label id="availableLakeViewLbl" fx:id="availableLakeViewLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Label text="Garden View: " GridPane.rowIndex="7" />
-            <Label id="availableGardenViewLbl" fx:id="availableGardenViewLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Label text="Street View: " GridPane.rowIndex="8" />
-            <Label id="availableStreetViewLbl" fx:id="availableStreetViewLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <Label text="Basic: " GridPane.rowIndex="9" />
-            <Label id="availableBasicLbl" fx:id="availableBasicLbl" text="0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <Label text="Checking In/Out: " GridPane.columnIndex="3" GridPane.rowIndex="4">
+            <Label text="Penthouse:" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label id="availablePenthouseLbl" fx:id="availablePenthouseLbl" text="0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="Lake View: " GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label id="availableLakeViewLbl" fx:id="availableLakeViewLbl" text="0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="Garden View: " GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label id="availableGardenViewLbl" fx:id="availableGardenViewLbl" text="0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="Street View: " GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="8" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label id="availableStreetViewLbl" fx:id="availableStreetViewLbl" text="0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="8" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="Basic: " GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="9" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label id="availableBasicLbl" fx:id="availableBasicLbl" text="0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="9" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="Checking In/Out: " GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Checking In Today: " GridPane.columnIndex="3" GridPane.rowIndex="5" />
-            <Label id="checkingInTodayLbl" fx:id="checkingInTodayLbl" text="0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-            <Label text="Checking Out Today: " GridPane.columnIndex="3" GridPane.rowIndex="6" />
-            <Label id="checkingOutTodayLbl" fx:id="checkingOutTodayLbl" text="0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+            <Label text="Checking In Today: " GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label id="checkingInTodayLbl" fx:id="checkingInTodayLbl" text="0" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="Checking Out Today: " GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label id="checkingOutTodayLbl" fx:id="checkingOutTodayLbl" text="0" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
          </children>
       </GridPane>
-      <GridPane GridPane.columnIndex="2" GridPane.columnSpan="4" GridPane.rowIndex="10" GridPane.rowSpan="4">
+      <GridPane GridPane.columnIndex="2" GridPane.columnSpan="4" GridPane.rowIndex="11">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" />
          </columnConstraints>
          <rowConstraints>
-            <RowConstraints vgrow="SOMETIMES" />
             <RowConstraints vgrow="SOMETIMES" />
             <RowConstraints vgrow="SOMETIMES" />
             <RowConstraints vgrow="SOMETIMES" />
@@ -315,40 +394,60 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B#8A9A5B;" GridPane.rowIndex="1">
+            <VBox alignment="CENTER" style="-fx-background-color: #8A9A5B#8A9A5B;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" text="Available" textAlignment="CENTER" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Available" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #CD5C5C;" GridPane.rowIndex="2">
+            <VBox alignment="CENTER" style="-fx-background-color: #CD5C5C;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" text="Occupied" textAlignment="CENTER" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Occupied" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #FADA5E;" GridPane.rowIndex="3">
+            <VBox alignment="CENTER" style="-fx-background-color: #FADA5E;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" text="Cleaning" textAlignment="CENTER" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Cleaning" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #7851A9;" GridPane.rowIndex="4">
+            <VBox alignment="CENTER" style="-fx-background-color: #007791;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" text="Check Out" textAlignment="CENTER" />
-               </children>
-            </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #007791;" GridPane.rowIndex="5">
-               <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" text="Maintenance" textAlignment="CENTER" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Maintenance" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
                </children>
             </VBox>
          </children>
       </GridPane>
-      <Label layoutX="631.0" layoutY="569.0" text="Copyright @ T34MN3RD 2018" GridPane.columnSpan="5" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="16" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <Label layoutX="631.0" layoutY="569.0" text="Copyright @ T34MN3RD 2018" GridPane.columnSpan="5" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="13" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
       <Separator prefWidth="200.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-      <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="5" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="9" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-      <Separator prefWidth="200.0" GridPane.columnSpan="7" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="15" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-      <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="13" />
+      <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <Separator prefWidth="200.0" GridPane.columnSpan="7" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="12" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="10" />
+      <HBox alignment="CENTER_LEFT" spacing="20.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="8" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         <children>
+            <JFXComboBox id="roomSelectionCmbBox" fx:id="roomSelectionCmbBox" promptText="Room" />
+            <JFXComboBox id="roomStatusCmbBox" fx:id="roomStatusCmbBox" promptText="Status" />
+         </children>
+      </HBox>
+      <Label text="Status: " GridPane.columnIndex="2" GridPane.rowIndex="7">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Separator layoutX="967.0" layoutY="363.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="10" />
+      <JFXButton id="statusUpadteBtn" fx:id="statusUpadteBtn" onAction="#onStatusUpadteBtnClick" text="Update" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="9" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
    </children>
    <padding>
-      <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+      <Insets left="40.0" right="40.0" top="10.0" />
    </padding>
 </GridPane>

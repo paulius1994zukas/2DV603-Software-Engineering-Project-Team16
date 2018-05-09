@@ -27,11 +27,7 @@ import java.io.File;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.ResourceBundle;
-
-import static hotel.helpers.HotelHelper.initPDFExprot;
 
 public class GuestAccountController implements Initializable {
     ObservableList<GuestAccount> guestAccountsList = FXCollections.observableArrayList();

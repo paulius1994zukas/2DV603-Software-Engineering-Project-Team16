@@ -10,6 +10,7 @@ public class Room {
     private String smoking;
     private String adjoining;
     private int maxRate;
+    private String status;
     private static String location;
     private static Room room;
     private static LocalDate checkInDate;
@@ -17,6 +18,11 @@ public class Room {
 
     public Room() {
 
+    }
+
+    public Room(String roomID, String status) {
+        this.roomID = roomID;
+        this.status = status;
     }
 
     public Room(String roomID, String quality, String bedNumber, String smoking, String adjoining, int maxRate) {
@@ -74,6 +80,14 @@ public class Room {
 
     public void setMaxRate(int maxRate) {
         this.maxRate = maxRate;
+    }
+
+    public  String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public static String getLocation() {
