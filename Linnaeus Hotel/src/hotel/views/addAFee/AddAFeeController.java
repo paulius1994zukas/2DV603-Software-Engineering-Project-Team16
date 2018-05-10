@@ -63,6 +63,23 @@ public class AddAFeeController implements Initializable {
     }
 
     @FXML
+    private void onDeleteFeeContextBtnClick(ActionEvent event) {
+        DbConnect connection = new DbConnect();
+        ArrayList parameters = new ArrayList();
+        parameters.add(feesTableView.getSelectionModel().getSelectedItem().getId());
+        try {
+            String query = "DELETE FROM FEES WHERE ID=?";
+            connection.executeWithParameters(query, parameters);
+        } catch (Exception ex) {
+            System.err.println(ex);
+            alert.showErrorMessage(ex);
+        } finally {
+            connection.closeConnection();
+            getFees();
+        }
+    }
+
+    @FXML
     private void onAddBtnClick(ActionEvent event) {
         DbConnect connection = new DbConnect();
         ArrayList parameters = new ArrayList();

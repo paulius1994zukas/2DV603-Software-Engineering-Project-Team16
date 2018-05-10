@@ -3,6 +3,8 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -10,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 
-<GridPane hgap="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" vgap="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="hotel.views.addAFee.AddAFeeController">
+<GridPane hgap="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" vgap="20.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.views.addAFee.AddAFeeController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" />
     <ColumnConstraints hgrow="SOMETIMES" />
@@ -30,6 +32,13 @@
           <TableColumn id="feeColumn" fx:id="feeColumn" prefWidth="75.0" text="Fee" />
             <TableColumn id="descriptionColumn" fx:id="descriptionColumn" maxWidth="400.0" minWidth="400.0" prefWidth="400.0" text="Description" />
         </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem id="deleteFeeContextBtn" fx:id="deleteFeeContextBtn" mnemonicParsing="false" onAction="#onDeleteFeeContextBtnClick" text="Delete Fee" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
       </TableView>
       <JFXButton id="addBtn" fx:id="addBtn" onAction="#onAddBtnClick" text="Add" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
       <Text id="totalFeesLbl" fx:id="totalFeesLbl" strokeType="OUTSIDE" strokeWidth="0.0" text="Total fees: " GridPane.columnSpan="2" GridPane.rowIndex="3" />
