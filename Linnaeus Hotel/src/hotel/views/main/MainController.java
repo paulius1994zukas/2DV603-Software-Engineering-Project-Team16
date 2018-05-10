@@ -248,6 +248,8 @@ public class MainController implements Initializable {
     private void onLocationComboBoxChanged(ActionEvent event) {
         room.setLocation(locationComboBox.getSelectionModel().getSelectedItem().toString());
         updateMainScreenInfo();
+        getStatusesAndRooms();
+        setRoomVBoxStyles();
     }
 
     @FXML
