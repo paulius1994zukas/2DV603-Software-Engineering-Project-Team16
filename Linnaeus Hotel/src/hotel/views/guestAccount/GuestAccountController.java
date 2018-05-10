@@ -33,6 +33,7 @@ public class GuestAccountController implements Initializable {
     ObservableList<GuestAccount> guestAccountsList = FXCollections.observableArrayList();
     ObservableList<Reservation> reservationsList = FXCollections.observableArrayList();
     ObservableList<Room> roomsList = FXCollections.observableArrayList();
+    ObservableList<Room> passportNumbersList = FXCollections.observableArrayList();
 
     private Reservation reservation = new Reservation();
 
@@ -140,6 +141,7 @@ public class GuestAccountController implements Initializable {
         ObservableList sex = FXCollections.observableArrayList();
         sex.add("Male");
         sex.add("Female");
+        sex.add("Not Specified");
         sexCmbBox.setItems(sex);
         createSexCmbBox.setItems(sex);
     }
@@ -353,12 +355,20 @@ public class GuestAccountController implements Initializable {
                 alert.showSimpleAlert("Oops, you have left something out!", "In order to create a " +
                         "new guest account all the fields above must contain value. Please do not leave any fields blank!");
             } else {
-                String query = "INSERT INTO GUESTS(ID, FIRSTNAME, LASTNAME, ADDRESS, SEX, PHONENUMBER, CREDITCARDNUMBER, PASSPORTNUMBER) VALUES(NULL,?,?,?,?,?,?,?)";
-                connection.executeWithParameters(query, parameters);
-                connection.closeConnection();
-                alert.showSimpleAlert("Guest account was created!",
-                        String.format("User account for %s %s was successfully created!",
-                                createFirstNameTxtField.getText(), createLastNameTxtField.getText()));
+                if(!checkIfPassportNumberExists()) {
+                    String query = "INSERT INTO GUESTS(ID, FIRSTNAME, LASTNAME, ADDRESS, SEX, PHONENUMBER, CREDITCARDNUMBER, PASSPORTNUMBER) VALUES(NULL,?,?,?,?,?,?,?)";
+                    connection.executeWithParameters(query, parameters);
+                    connection.closeConnection();
+                    alert.showSimpleAlert("Guest account was created!",
+                            String.format("User account for %s %s was successfully created!",
+                                    createFirstNameTxtField.getText(), createLastNameTxtField.getText()));
+                    clearCreateFields();
+                }
+                else{
+                    alert.showSimpleAlert("Something went wrong!",
+                            String.format("Passport numbers must be unique! Passport number %s already exists!",
+                                    passportNumberTextField.getText()));
+                }
             }
         } catch (Exception ex) {
             System.err.println(ex);
@@ -366,7 +376,27 @@ public class GuestAccountController implements Initializable {
         } finally {
 
         }
-        clearCreateFields();
+    }
+
+    private boolean checkIfPassportNumberExists() {
+        int counter = 0;
+        DbConnect connection = new DbConnect();
+        ArrayList parameters = new ArrayList();
+        parameters.add(createPassportNumberTxtField.getText());
+        try {
+            String query = "SELECT PASSPORTNUMBER FROM GUESTS WHERE PASSPORTNUMBER=?";
+            ResultSet rs = connection.executeWithParameters(query, parameters);
+            while (rs.next()) {
+                counter++;
+            }
+            return true;
+        } catch (Exception ex) {
+            System.err.println(ex);
+            alert.showErrorMessage(ex);
+        } finally {
+
+        }
+        return false;
     }
 
     @FXML
@@ -404,6 +434,7 @@ public class GuestAccountController implements Initializable {
                 alert.showSimpleAlert("Reservation successful!",
                         String.format("New reservation for guest %s %s was successfully added!",
                                 firstNameTextField.getText(), lastNameTextField.getText()));
+                room.setRoom(null);
             }
             getReservations();
             roomsList.clear();

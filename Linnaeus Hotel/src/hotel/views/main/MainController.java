@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.ResultSet;
@@ -274,6 +275,17 @@ public class MainController implements Initializable {
     private void onHelpBtnClick(ActionEvent event) {
         HotelHelper.loadWindow(getClass().getResource("/hotel/views/help/help.fxml"),
                 "Help", null, false);
+    }
+
+    @FXML
+    private void onLogoutBtnClick(ActionEvent event) {
+        closeStage();
+        HotelHelper.loadWindow(getClass().getResource("/hotel/views/login/login.fxml"),
+                "Login", null, false);
+    }
+
+    private void closeStage() {
+        ((Stage) locationComboBox.getScene().getWindow()).close();
     }
 
     @FXML

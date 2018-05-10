@@ -446,6 +446,7 @@
       </Label>
       <Separator layoutX="967.0" layoutY="363.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="10" />
       <JFXButton id="statusUpadteBtn" fx:id="statusUpadteBtn" onAction="#onStatusUpadteBtnClick" text="Update" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="9" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+      <JFXButton id="logoutBtn" fx:id="logoutBtn" onAction="#onLogoutBtnClick" text="Logout" />
    </children>
    <padding>
       <Insets left="40.0" right="40.0" top="10.0" />
