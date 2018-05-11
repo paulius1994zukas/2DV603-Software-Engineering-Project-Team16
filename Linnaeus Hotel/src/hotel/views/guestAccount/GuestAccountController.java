@@ -33,7 +33,6 @@ public class GuestAccountController implements Initializable {
     ObservableList<GuestAccount> guestAccountsList = FXCollections.observableArrayList();
     ObservableList<Reservation> reservationsList = FXCollections.observableArrayList();
     ObservableList<Room> roomsList = FXCollections.observableArrayList();
-    ObservableList<Room> passportNumbersList = FXCollections.observableArrayList();
 
     private Reservation reservation = new Reservation();
 
@@ -69,7 +68,6 @@ public class GuestAccountController implements Initializable {
     private TableColumn<Reservation, String> checkedInCollumn;
     @FXML
     private TableColumn<Reservation, String> locationCollumn;
-
     @FXML
     private TableView<Room> availableRoomsTableView;
     @FXML
@@ -262,7 +260,6 @@ public class GuestAccountController implements Initializable {
                 = new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf");
         fileChooser.getExtensionFilters().add(extFilter);
         File saveLoc = fileChooser.showSaveDialog(stage);
-        String pdfFilename = "src/resources/Invoice_Ex.pdf";
         InvoicePrinter generateInvoice = new InvoicePrinter();
         Reservation reservation = new Reservation();
         reservation.setReservation(reservationsTableView.getSelectionModel().getSelectedItem());

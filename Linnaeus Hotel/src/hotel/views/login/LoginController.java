@@ -5,7 +5,6 @@ import com.jfoenix.controls.JFXTextField;
 import hotel.database.DbConnect;
 import hotel.helpers.AlertMaker;
 import hotel.helpers.HotelHelper;
-import hotel.models.GuestAccount;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

@@ -1,7 +1,5 @@
 package hotel.models;
 
-import java.util.Date;
-
 public class Fee {
 
     private int id;

@@ -1,6 +1,5 @@
 package hotel.models;
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 public class Reservation {

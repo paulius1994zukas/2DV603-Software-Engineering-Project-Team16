@@ -1,4 +1,3 @@
-
 package hotel.database;
 
 import java.sql.DriverManager;
@@ -16,6 +15,7 @@ public class DbConnect {
     private final String password = "676a64b2";
     private Connection connectionDB;
     public static final String dbName = "heroku_039d3586b62093c";
+
     //Old database and connection. If needed for any reason.
     //    private static final String connection_url = "jdbc:mysql://sql11.freesqldatabase.com:3306/sql11225424";
     //    private final String username = "sql11225424";

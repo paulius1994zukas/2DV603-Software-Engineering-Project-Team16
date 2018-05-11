@@ -4,7 +4,6 @@ import com.jfoenix.controls.JFXComboBox;
 import hotel.database.DbConnect;
 import hotel.helpers.AlertMaker;
 import hotel.helpers.HotelHelper;
-import hotel.models.GuestAccount;
 import hotel.models.Room;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,12 +21,9 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
-    private String location;
     private AlertMaker alert = new AlertMaker();
     @FXML
     private JFXComboBox locationComboBox;
-    @FXML
-    private Label totalRoomsLbl;
     @FXML
     private Label occupiedRoomsLbl;
     @FXML
@@ -103,11 +99,6 @@ public class MainController implements Initializable {
     private int totalGuestsCount = 0;
     private int maleGuestsCount = 0;
     private int femaleGuestsCount = 0;
-    private int penthouseCount = 0;
-    private int lakeViewCount = 0;
-    private int gardenViewCount = 0;
-    private int streetViewCount = 0;
-    private int basicCount = 0;
     private int checkInsTodayCount = 0;
     private int checkOutsTodayCount = 0;
 
