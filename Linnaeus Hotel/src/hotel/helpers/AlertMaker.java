@@ -1,6 +1,7 @@
 package hotel.helpers;
 
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
@@ -27,7 +28,18 @@ public class AlertMaker {
         alert.setTitle("Error");
         alert.setHeaderText(title);
         alert.setContentText(content);
+        alert.showAndWait();
+    }
 
+    public static void showYesNoAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.NONE);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.getButtonTypes().add(ButtonType.YES);
+        alert.getButtonTypes().add(ButtonType.NO);
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        HotelHelper.setStageIcon(stage);
         alert.showAndWait();
     }
 

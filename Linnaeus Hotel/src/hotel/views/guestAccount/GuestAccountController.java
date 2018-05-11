@@ -15,6 +15,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -26,7 +27,11 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.net.URL;
 import java.sql.ResultSet;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class GuestAccountController implements Initializable {
@@ -184,7 +189,35 @@ public class GuestAccountController implements Initializable {
 
     @FXML
     private void onCheckOutCntxtBtnClick(ActionEvent event) {
+        if (LocalTime.now().isAfter(LocalTime.parse("11:30"))) {
+            Reservation selectedReservation = reservationsTableView.getSelectionModel().getSelectedItem();
+            reservation.setReservation(selectedReservation);
+            addLateCheckOutFee();
+        }
         checkInOut(false);
+        alert.showSimpleAlert("Invoice is Printing",
+                String.format("%s %s is going to be checked out and an invoice printed!",
+                        firstNameTextField.getText(), lastNameTextField.getText()));
+        printBill(true);
+    }
+
+    private void addLateCheckOutFee(){
+        DbConnect connection = new DbConnect();
+        ArrayList parameters = new ArrayList();
+        parameters.add(reservation.getReservation().getId());
+        parameters.add("500");
+        parameters.add("Late checkout (after 11:30) fee");
+        try {
+            String query = "INSERT INTO FEES(ID, RESERVATIONID, FEE, DESCRIPTION) VALUES(NULL,?,?,?)";
+            connection.executeWithParameters(query, parameters);
+        } catch (Exception ex) {
+            System.err.println(ex);
+            alert.showErrorMessage(ex);
+        } finally {
+            connection.closeConnection();
+            alert.showSimpleAlert("Guest account was created!",
+                    String.format("Fee on reservation ID %s was successfully added.", reservation.getReservation().getId()));
+        }
     }
 
     private void checkInOut(boolean yesOrNo) {
@@ -253,6 +286,10 @@ public class GuestAccountController implements Initializable {
 
     @FXML
     private void onPrintBillCntxtBtnClick(ActionEvent event) {
+        printBill(false);
+    }
+
+    private void printBill(boolean onCheckout) {
         Stage stage = (Stage) searchBtn.getScene().getWindow();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save as PDF");
@@ -260,10 +297,16 @@ public class GuestAccountController implements Initializable {
                 = new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf");
         fileChooser.getExtensionFilters().add(extFilter);
         File saveLoc = fileChooser.showSaveDialog(stage);
-        InvoicePrinter generateInvoice = new InvoicePrinter();
-        Reservation reservation = new Reservation();
-        reservation.setReservation(reservationsTableView.getSelectionModel().getSelectedItem());
-        generateInvoice.createPDF(saveLoc.toString());
+        if (saveLoc != null) {
+            InvoicePrinter generateInvoice = new InvoicePrinter();
+            if(!onCheckout) {
+                Reservation reservation = new Reservation();
+                reservation.setReservation(reservationsTableView.getSelectionModel().getSelectedItem());
+            }
+            generateInvoice.createPDF(saveLoc.toString());
+            alert.showSimpleAlert("Invoice Printed!",
+                    String.format("Your invoice has been successfully printed and saved at selected location."));
+        }
     }
 
     @FXML
@@ -352,7 +395,7 @@ public class GuestAccountController implements Initializable {
                 alert.showSimpleAlert("Oops, you have left something out!", "In order to create a " +
                         "new guest account all the fields above must contain value. Please do not leave any fields blank!");
             } else {
-                if(!checkIfPassportNumberExists()) {
+                if (!checkIfPassportNumberExists()) {
                     String query = "INSERT INTO GUESTS(ID, FIRSTNAME, LASTNAME, ADDRESS, SEX, PHONENUMBER, CREDITCARDNUMBER, PASSPORTNUMBER) VALUES(NULL,?,?,?,?,?,?,?)";
                     connection.executeWithParameters(query, parameters);
                     connection.closeConnection();
@@ -360,8 +403,7 @@ public class GuestAccountController implements Initializable {
                             String.format("User account for %s %s was successfully created!",
                                     createFirstNameTxtField.getText(), createLastNameTxtField.getText()));
                     clearCreateFields();
-                }
-                else{
+                } else {
                     alert.showSimpleAlert("Something went wrong!",
                             String.format("Passport numbers must be unique! Passport number %s already exists!",
                                     passportNumberTextField.getText()));
